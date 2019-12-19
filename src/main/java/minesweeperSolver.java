@@ -9,7 +9,7 @@ public class minesweeperSolver {
             System.out.println("Easy (e), Medium (m), or Hard (h)");
             String inputString = input.next();
             if (inputString.equals("e") || inputString.equals("m") || inputString.equals("h")) {
-                minesweeperlogic.startGame(inputString);
+                MinesweeperLogic.startGame(inputString);
                 correctInput = false;
             } else {
                 System.out.println("Please input e, m or h");

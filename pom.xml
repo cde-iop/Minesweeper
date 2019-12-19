@@ -9,14 +9,18 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-            <selenium.version>3.4.0</selenium.version>
+        <selenium.version>3.4.0</selenium.version>
 
-            <overwrite.binaries>false</overwrite.binaries>
-            <read.timeout>30000</read.timeout>
-            <connection.timeout>40000</connection.timeout>
-            <retry.attempts>4</retry.attempts>
-            <maven.compiler.source>1.8</maven.compiler.source>
-            <maven.compiler.target>1.8</maven.compiler.target>
+        <overwrite.binaries>false</overwrite.binaries>
+        <read.timeout>30000</read.timeout>
+        <connection.timeout>40000</connection.timeout>
+        <retry.attempts>4</retry.attempts>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <sonar.projectKey>cde-iop_Minesweeper</sonar.projectKey>
+        <sonar.organization>cde-iop</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.login>964d95016b1b2b6c744d6d695f1d6fd338f7097e</sonar.login>
 
     </properties>
 
