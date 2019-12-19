@@ -1,6 +1,8 @@
 import java.util.Scanner;
 import java.util.logging.Logger;
 
+
+
 public class MinesweeperApplication {
     private static final Logger logger = Logger.getLogger(MinesweeperApplication.class.getName());
 

@@ -26,11 +26,11 @@ class GameState {
         this.driver = driver;
 
         WebElement table = driver.findElement(new By.ByXPath("/html/body/table"));
-        WebElement outer_container = table.findElement(By.className("outer-container"));
-        WebElement inner_container = outer_container.findElement(By.className("inner-container"));
-        WebElement center_column = inner_container.findElement(By.id("center-column"));
-        WebElement game_container = center_column.findElement(By.id("game-container"));
-        this.game = game_container.findElement(By.id("game"));
+        WebElement outerContainer = table.findElement(By.className("outer-container"));
+        WebElement innerContainer = outerContainer.findElement(By.className("inner-container"));
+        WebElement centerColumn = innerContainer.findElement(By.id("center-column"));
+        WebElement gameContainer = centerColumn.findElement(By.id("game-container"));
+        this.game = gameContainer.findElement(By.id("game"));
         constructSquareList();
     }
 

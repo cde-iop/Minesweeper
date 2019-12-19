@@ -37,7 +37,7 @@ class MinesweeperSolver {
                 gameState = new GameState(dimensions, driver);
                 gameState.constructSquareList();
                 noOfBombs = 40;
-                iterationCount = 4;
+                iterationCount = 3;
 
                 break;
             case "h":

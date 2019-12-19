@@ -1,58 +1,53 @@
 
 $GameState#checkForPattern(LSquare;)ZA
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¬ ¬("7*“
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java¯ ¯("6*“
 2A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java² ²("K
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java³ ³("K
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java² ²(
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java³ ³(
 ""*í
 3A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java± ±(œ
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java²) ²(5œ
 ™
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java± ±('
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java²) ²(>
 %2boolean"!GameState#checkFor1221(LSquare;)Z*
 	GameState*
 
 elementSquare*
 2
-1*“
+1*ì
 4A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java° °("K
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java° °(
-""*ì
-5A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¯ ¯(›
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java² ²(›
 ˜
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¯ ¯(%
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java² ²(%
 %1boolean" GameState#checkFor121(LSquare;)Z*
 	GameState*
 
 elementSquare*
-3
-4*“
-6A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java® ®("K
+2
+3*“
+5A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java± ±("K
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java® ®(
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java± ±(
 ""*ë
-7A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java­ ­(š
+6A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java° °(š
 —
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java­ ­(
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java° °(
 %0boolean"GameState#checkFor11(LSquare;)Z*
 	GameState*
 
 elementSquare*
-5
-6*“
+4
+5*“
 1A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java´ ´("K
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaµ µ("K
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java´ ´(
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaµ µ(
 "":
 elementSquareB
 	GameState
