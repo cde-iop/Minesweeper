@@ -601,12 +601,13 @@ MdragAndDrop(Lorg/openqa/selenium/WebElement;Lorg/openqa/selenium/WebElement;) 
 contextClick()aorg.openqa.selenium.interactions.Actions#contextClick()Lorg/openqa/selenium/interactions/Actions;g
 pause(J)[org.openqa.selenium.interactions.Actions#pause(J)Lorg/openqa/selenium/interactions/Actions;²
 -doubleClick(Lorg/openqa/selenium/WebElement;)€org.openqa.selenium.interactions.Actions#doubleClick(Lorg/openqa/selenium/WebElement;)Lorg/openqa/selenium/interactions/Actions;«
-*sendKeysInTicks([Ljava/lang/CharSequence;)}org.openqa.selenium.interactions.Actions#sendKeysInTicks([Ljava/lang/CharSequence;)Lorg/openqa/selenium/interactions/Actions;Ò
-MinesweeperLogicjava.lang.ObjectP
-startGame(Ljava/lang/String;)/MinesweeperLogic#startGame(Ljava/lang/String;)V&
-<init>()MinesweeperLogic#<init>()VH
-solveTheGame(LGameState;)+MinesweeperLogic#solveTheGame(LGameState;)Vh
-)checkAndClearSquares(LSquare;LGameState;);MinesweeperLogic#checkAndClearSquares(LSquare;LGameState;)V:
+*sendKeysInTicks([Ljava/lang/CharSequence;)}org.openqa.selenium.interactions.Actions#sendKeysInTicks([Ljava/lang/CharSequence;)Lorg/openqa/selenium/interactions/Actions;–
+MinesweeperSolverjava.lang.ObjectQ
+startGame(Ljava/lang/String;)0MinesweeperSolver#startGame(Ljava/lang/String;)V'
+<init>()MinesweeperSolver#<init>()VI
+solveTheGame(LGameState;),MinesweeperSolver#solveTheGame(LGameState;)V=
+MineSweeperSolver()&MinesweeperSolver#MineSweeperSolver()Vi
+)checkAndClearSquares(LSquare;LGameState;)<MinesweeperSolver#checkAndClearSquares(LSquare;LGameState;)V:
 &org.openqa.selenium.JavascriptExecutorjava.lang.Object:
 &org.openqa.selenium.internal.FindsByIdjava.lang.ObjectA
 -org.openqa.selenium.internal.FindsByClassNamejava.lang.Object@
@@ -757,10 +758,10 @@ doubles(J):java.util.Random#doubles(J)Ljava/util/stream/DoubleStream;*
 
 nextLong()java.util.Random#nextLong()J.
 resetSeed(J)java.util.Random#resetSeed(J)Vh
-)writeObject(Ljava/io/ObjectOutputStream;);java.util.Random#writeObject(Ljava/io/ObjectOutputStream;)V™
-minesweeperSolverjava.lang.Object'
-<init>()minesweeperSolver#<init>()VI
-main([Ljava/lang/String;),minesweeperSolver#main([Ljava/lang/String;)VÈ
+)writeObject(Ljava/io/ObjectOutputStream;);java.util.Random#writeObject(Ljava/io/ObjectOutputStream;)V¨
+MinesweeperApplicationjava.lang.Object,
+<init>() MinesweeperApplication#<init>()VN
+main([Ljava/lang/String;)1MinesweeperApplication#main([Ljava/lang/String;)VÈ
 java.util.Iteratorjava.lang.Objectv
 /forEachRemaining(Ljava/util/function/Consumer;)Cjava.util.Iterator#forEachRemaining(Ljava/util/function/Consumer;)V(
 remove()java.util.Iterator#remove()V·G

@@ -1,10 +1,17 @@
 
-Square#isCleared()Z<
-2C:/Users/cde/MineSweeper/src/main/java/Square.javaK K("1*‰
+2Square#getWebEle()Lorg/openqa/selenium/WebElement;<
+2C:/Users/cde/MineSweeper/src/main/java/Square.java2 2("1*±
 1<
-2C:/Users/cde/MineSweeper/src/main/java/Square.javaL L("F
+2C:/Users/cde/MineSweeper/src/main/java/Square.java3 3(…
+‚
 <
-2C:/Users/cde/MineSweeper/src/main/java/Square.javaL L(
-""B
+2C:/Users/cde/MineSweeper/src/main/java/Square.java3 3($
+%0org.openqa.selenium.WebElement"__id**
+Square"
+webEle"f
+<
+2C:/Users/cde/MineSweeper/src/main/java/Square.java3 3(&
+$
+%0org.openqa.selenium.WebElementB
 
 Square

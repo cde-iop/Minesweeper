@@ -3,5 +3,5 @@ projectKey=cde-iop_Minesweeper
 serverUrl=https://sonarcloud.io
 serverVersion=8.0.0.3648
 dashboardUrl=https://sonarcloud.io/dashboard?id=cde-iop_Minesweeper
-ceTaskId=AW8ep2M28okQoag-oTOi
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AW8ep2M28okQoag-oTOi
+ceTaskId=AW8etRTW2i03xGv0jNL-
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AW8etRTW2i03xGv0jNL-

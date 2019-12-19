@@ -6,8 +6,10 @@ import org.openqa.selenium.By;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.logging.Logger;
 
 class MinesweeperSolver {
+    private static final Logger logger = Logger.getLogger(MinesweeperSolver.class.getName());
     private static int noOfBombs;
     private static int iterationCount;
     private static boolean gameFinished = false;
@@ -26,7 +28,7 @@ class MinesweeperSolver {
                 gameState = new GameState(dimensions, driver);
                 gameState.constructSquareList();
                 noOfBombs = 10;
-                iterationCount = 2;
+                iterationCount = 1;
                 break;
             case "m":
                 driver.get("http://minesweeperonline.com/#intermediate-150-night");
@@ -61,10 +63,10 @@ class MinesweeperSolver {
                 squares.get(String.format(format, y, x)).getWebEle().click();
             }
             if (!game.findElements(By.className("facedead")).isEmpty()) {
-                System.out.println("Game over at game start restarting");
+                logger.info("Game over at game start restarting");
                 (game.findElement(By.className("facedead"))).click();
-            }else {
-                System.out.println("Game Started, now solving...");
+            } else {
+                logger.info("Game Started, now solving...");
                 solveTheGame(gameState);
                 gameStart = true;
             }
@@ -92,11 +94,11 @@ class MinesweeperSolver {
         element.updateWebEle(game.getGame());
         Square value;
         int bombsFound;
-        if(noOfBombs == 0){
-            System.out.println("Game Finished, clearing up!");
-            for(Map.Entry<String, Square> entry : game.getAllSquares().entrySet()) {
+        if (noOfBombs == 0) {
+            logger.info("Game Finished, clearing up!");
+            for (Map.Entry<String, Square> entry : game.getAllSquares().entrySet()) {
                 value = entry.getValue();
-                if (value.getEleClass().equals("square blank")){
+                if (value.getEleClass().equals("square blank")) {
                     value.getWebEle().click();
                 }
             }
@@ -112,14 +114,14 @@ class MinesweeperSolver {
                     for (Square item : blankList) {
                         game.contextClick(item.getWebEle());
                         noOfBombs -= 1;
-                        for (Square thing: item.getSurroundingSquares()){
+                        for (Square thing : item.getSurroundingSquares()) {
                             thing.setBombsFound(thing.getBombsFound() + 1);
                         }
                         item.updateWebEle(game.getGame());
                         item.setChecked(false);
                     }
                     element.setCleared(true);
-                    for(Square item : element.getSurroundingSquares()){
+                    for (Square item : element.getSurroundingSquares()) {
                         checkAndClearSquares(item, game);
                     }
                 } else if (bombsFound == number) {
@@ -130,29 +132,27 @@ class MinesweeperSolver {
                         item.setChecked(false);
                     }
                     element.setCleared(true);
-                    for(Square item : element.getSurroundingSquares()){
+                    for (Square item : element.getSurroundingSquares()) {
                         checkAndClearSquares(item, game);
                     }
 
-                }else if(iterationCount <= 0){
-                    System.out.println("Guessing random square");
+                } else if (iterationCount <= 0) {
+                    logger.info("Guessing random square");
                     blankList.get(rand.nextInt(blankList.size())).getWebEle().click();
                     iterationCount = 2;
-                }else{
+                } else {
                     element.setChecked(true);
-                    if(game.checkForPattern(element)){
+                    if (game.checkForPattern(element)) {
                         noOfBombs -= 2;
                         element.setCleared(true);
-                        for(Square item : element.getSurroundingSquares()){
+                        for (Square item : element.getSurroundingSquares()) {
                             checkAndClearSquares(item, game);
                         }
-                    }else if (iterationCount <= 2 && game.checkFor21(element)) {
+                    } else if (iterationCount <= 2 && game.checkFor21(element)) {
                         noOfBombs -= 1;
                     }
                 }
             }
         }
     }
-
-    private void MineSweeperSolver(){}
 }

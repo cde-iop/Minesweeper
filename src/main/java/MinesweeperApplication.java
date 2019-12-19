@@ -1,18 +1,21 @@
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class MinesweeperApplication {
+    private static final Logger logger = Logger.getLogger(MinesweeperApplication.class.getName());
+
 
     public static void main(String args[]) {
         Scanner input = new Scanner(System.in);
         Boolean correctInput = true;
         while(correctInput) {
-            System.out.println("Easy (e), Medium (m), or Hard (h)");
+            logger.info("Easy (e), Medium (m), or Hard (h)");
             String inputString = input.next();
             if (inputString.equals("e") || inputString.equals("m") || inputString.equals("h")) {
                 MinesweeperSolver.startGame(inputString);
                 correctInput = false;
             } else {
-                System.out.println("Please input e, m or h");
+                logger.warning("Please input e, m or h");
             }
 
         }

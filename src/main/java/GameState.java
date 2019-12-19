@@ -3,9 +3,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import java.util.*;
+import java.util.logging.Logger;
 
 
 class GameState {
+    private static final Logger logger = Logger.getLogger(GameState.class.getName());
+
     private WebDriver driver;
 
     private int[] dimensions;
@@ -138,16 +141,16 @@ class GameState {
 
         switch (face.getAttribute("class")) {
             case "facesmile":
-                System.out.println("Still solving");
+                logger.info("Still solving");
                 break;
             case "facewin":
                 gameFinished = true;
-                System.out.println("Finished the game successfully!");
+                logger.info("Finished the game successfully!");
                 driver.quit();
                 break;
             case "facedead":
                 gameFinished = true;
-                System.out.println("Lost the game...");
+                logger.info("Lost the game...");
                 driver.quit();
                 break;
         }
@@ -159,7 +162,7 @@ class GameState {
             Actions actions = new Actions(driver);
             actions.contextClick(element).perform();
         } catch (org.openqa.selenium.WebDriverException e){
-            System.out.println("Caught: " + e + "as expected sometimes");
+            logger.info("Caught: " + e);
         }
     }
 
@@ -172,11 +175,9 @@ class GameState {
     boolean checkForPattern(Square element) {
         if (checkFor11(element)){
             return false;
-        }else if(checkFor121(element)){
+        }else if(checkFor121(element) || checkFor1221(element)) {
             return true;
-        } else if(checkFor1221(element)){
-            return true;
-        } else{
+        }else{
             return false;
         }
 
@@ -190,8 +191,7 @@ class GameState {
             if(checkFor11AndClear(currentSquare, squareToLeft)){
                 return true;
             }
-        } catch (NullPointerException e) {
-        }
+        } catch (NullPointerException e) {}
         try {
             Square squareToRight = allSquares.get(String.format(format, y, x + 1));
             if(checkFor11AndClear(currentSquare, squareToRight)){
