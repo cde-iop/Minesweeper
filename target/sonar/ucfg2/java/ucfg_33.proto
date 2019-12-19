@@ -1,0 +1,504 @@
+
+;MinesweeperLogic#checkAndClearSquares(LSquare;LGameState;)VF
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaZ Z(,"41*À
+24F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaq q($h
+f
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaq q($
+itemSquare"__id*
+""*
+29
+23*µ
+25F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaw w(ÇÄ
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaw* w(8%
+%23org.openqa.selenium.WebElement"3GameState#getGame()Lorg/openqa/selenium/WebElement;*
+
+game	GameState2	getGame()ûø
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaw w(9
+%24void"6Square#updateWebEle(Lorg/openqa/selenium/WebElement;)V*
+
+itemSquare*'
+%
+%23org.openqa.selenium.WebElement2.updateWebEle(Lorg/openqa/selenium/WebElement;)˜•
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javax x(.
+%25void"Square#setChecked(Z)V*
+
+itemSquare*
+""2setChecked(Z)*
+24*Á
+26F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javat t()i
+g
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javat t()
+thingSquare"__id*
+""*
+25
+27*‹
+27F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javau u(!”‘
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javau0 u(E
+
+%21int"Square#getBombsFound()I*
+
+thingSquare2getBombsFound()Ÿœ
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javau u(J
+%22void"Square#setBombsFound(I)V*
+
+thingSquare*
+""2setBombsFound(I)*
+26*’
+28F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javat+ t(/½º
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javat+ t(G
+%20java.util.List".Square#getSurroundingSquares()Ljava/util/List;*
+
+itemSquare2getSurroundingSquares()*
+26*ž
+29F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javar r(ÅÂ
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javar* r(:%
+%18org.openqa.selenium.WebElement"2Square#getWebEle()Lorg/openqa/selenium/WebElement;*
+
+itemSquare2getWebEle()þ
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javar r(;
+%19void"9GameState#contextClick(Lorg/openqa/selenium/WebElement;)V*
+
+game	GameState*'
+%
+%18org.openqa.selenium.WebElement2.contextClick(Lorg/openqa/selenium/WebElement;)*
+28*
+31F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javam m( ÖÓ
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javam m(6
+%14java.util.List"0GameState#getBlankList(LSquare;)Ljava/util/List;*
+
+game	GameState*
+
+elementSquare2getBlankList(LSquare;)‡
+„
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javam m(6
+	blankListjava.util.List"__id*
+
+%14java.util.List–“
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javan n(4
+
+%15int"Square#getBombsFound()I*
+
+elementSquare2getBombsFound()›˜
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javao o((
+%16void"Square#setChecked(Z)V*
+
+elementSquare*
+""2setChecked(Z)–“
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javap! p(1
+
+%17int"java.util.List#size()I*
+
+	blankListjava.util.List2size()*
+24
+18
+8
+9*æ
+32F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javak k(Ž‹
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javak k((
+
+%13int"Square#getNumber()I*
+
+elementSquare2getNumber()*
+31
+0*ê
+33F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaj% j(,’
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaj% j(8
+%12boolean"Square#isChecked()Z*
+
+elementSquare2isChecked()*
+32
+0*Ã
+11H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java† †(#j
+h
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java† †(#
+itemSquare"__id*
+""*
+0
+12*ê
+34F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaj j(’
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaj j( 
+%11boolean"Square#isCleared()Z*
+
+elementSquare2isCleared()*
+33
+0*«
+12H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java‡ ‡(,Ô
+Ñ
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java‡ ‡(8
+%37void";MinesweeperLogic#checkAndClearSquares(LSquare;LGameState;)V*"
+MinesweeperLogic*
+
+itemSquare*
+
+game	GameState*
+11*™
+13H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java†& †(-Â¿
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java†& †(E
+%36java.util.List".Square#getSurroundingSquares()Ljava/util/List;*
+
+elementSquare2getSurroundingSquares()*
+11*Î
+36F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javab b(/v
+t
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javab b(/
+entryjava.util.Map$Entry"__id*
+""*
+38
+34*ô
+14H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java… …(š
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java… …(,
+%35void"Square#setCleared(Z)V*
+
+elementSquare*
+""2setCleared(Z)*
+13*Ï
+37F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javae e(ÅÂ
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javae e(%$
+%9org.openqa.selenium.WebElement"2Square#getWebEle()Lorg/openqa/selenium/WebElement;*
+
+valueSquare2getWebEle()²¯
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javae e(-
+%10void"'org.openqa.selenium.WebElement#click()V*&
+$
+%9org.openqa.selenium.WebElement2click()*
+36*Ä
+15H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java€ €($j
+h
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java€ €($
+itemSquare"__id*
+""*
+14
+16*†
+38F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javac c(·´
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javac c((
+%6Square"0java.util.Map$Entry#getValue()Ljava/lang/Object;*
+
+entryjava.util.Map$Entry2
+getValue()q
+o
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javac c((
+valueSquare"__id*
+
+%6Square­ª
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javad d('
+%7java.lang.String"&Square#getEleClass()Ljava/lang/String;*
+
+valueSquare2getEleClass()ÐÍ
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javad d(>
+%8boolean",java.lang.String#equals(Ljava/lang/Object;)Z*
+
+%7java.lang.String*
+square blank2equals(Ljava/lang/Object;)*
+36
+37*¿
+16H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java (ÇÄ
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java ((%
+%30org.openqa.selenium.WebElement"2Square#getWebEle()Lorg/openqa/selenium/WebElement;*
+
+itemSquare2getWebEle()µ²
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java (0
+%31void"'org.openqa.selenium.WebElement#click()V*'
+%
+%30org.openqa.selenium.WebElement2click()ÉÆ
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java‚* ‚(8%
+%32org.openqa.selenium.WebElement"3GameState#getGame()Lorg/openqa/selenium/WebElement;*
+
+game	GameState2	getGame()ýú
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java‚ ‚(9
+%33void"6Square#updateWebEle(Lorg/openqa/selenium/WebElement;)V*
+
+itemSquare*'
+%
+%32org.openqa.selenium.WebElement2.updateWebEle(Lorg/openqa/selenium/WebElement;)š—
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaƒ ƒ(.
+%34void"Square#setChecked(Z)V*
+
+itemSquare*
+""2setChecked(Z)*
+15*´
+39F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javab2 b(6°­
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javab2 b(F
+%4java.util.Map"(GameState#getAllSquares()Ljava/util/Map;*
+
+game	GameState2getAllSquares()¬©
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javab2 b(Q
+%5java.util.Set"'java.util.Map#entrySet()Ljava/util/Set;*
+
+%4java.util.Map2
+entrySet()*
+36*ð
+18F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java (›˜
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java (,
+%29void"Square#setChecked(Z)V*
+
+elementSquare*
+""2setChecked(Z)*
+15*f
+0 "_
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaœ œ(
+implicit return*“
+2H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java–5 –(9¾»
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java–5 –(M
+%51boolean"GameState#checkFor21(LSquare;)Z*
+
+game	GameState*
+
+elementSquare2checkFor21(LSquare;)*
+0*Á
+4H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java“ “('j
+h
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java“ “('
+itemSquare"__id*
+""*
+5
+0*©
+5H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java” ”(0Ô
+Ñ
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java” ”(<
+%50void";MinesweeperLogic#checkAndClearSquares(LSquare;LGameState;)V*"
+MinesweeperLogic*
+
+itemSquare*
+
+game	GameState*
+4*—
+6H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java“* “(1Â¿
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java“* “(I
+%49java.util.List".Square#getSurroundingSquares()Ljava/util/List;*
+
+elementSquare2getSurroundingSquares()*
+4*ò
+7H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java‘ ‘(!š
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java’ ’(0
+%48void"Square#setCleared(Z)V*
+
+elementSquare*
+""2setCleared(Z)*
+6*Ã
+8H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java (š
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java (,
+%46void"Square#setChecked(Z)V*
+
+elementSquare*
+""2setChecked(Z)ÈÅ
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java (4
+%47boolean"$GameState#checkForPattern(LSquare;)Z*
+
+game	GameState*
+
+elementSquare2checkForPattern(LSquare;)*	
+2
+7
+0*¢
+9H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java‹ ‹(v
+t
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java‹ ‹(
+%38java.io.PrintStream"__id*
+""ãà
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java‹ ‹(@
+%39void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%38java.io.PrintStream*
+Guessing random square2println(Ljava/lang/String;)Œ
+‰
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaŒ" Œ(&
+%40java.util.Random"__id**
+MinesweeperLogic"
+rand˜•
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaŒ/ Œ(?
+
+%41int"java.util.List#size()I*
+
+	blankListjava.util.List2size()¬©
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaŒ" Œ(@
+
+%42int"java.util.Random#nextInt(I)I*
+
+%40java.util.Random*
+
+
+%41int2
+nextInt(I)•
+’
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaŒ Œ(A
+%43Square"
+__arrayGet*
+
+	blankListjava.util.List*
+
+
+%42intÆÃ
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaŒ Œ(M%
+%44org.openqa.selenium.WebElement"2Square#getWebEle()Lorg/openqa/selenium/WebElement;*
+
+%43Square2getWebEle()µ²
+H
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaŒ Œ(U
+%45void"'org.openqa.selenium.WebElement#click()V*'
+%
+%44org.openqa.selenium.WebElement2click()*
+0*®
+40F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaa a(s
+q
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaa a(
+%2java.io.PrintStream"__id*
+""äá
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaa a(=
+
+%3void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%2java.io.PrintStream*
+Game Finished, clearing up!2println(Ljava/lang/String;)*
+39*€
+41F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java[ [(u
+s
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java\ \(
+	blankListjava.util.List"__id*
+""ÆÃ
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java] ](+$
+%0org.openqa.selenium.WebElement"3GameState#getGame()Lorg/openqa/selenium/WebElement;*
+
+game	GameState2	getGame()üù
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java] ](,
+
+%1void"6Square#updateWebEle(Lorg/openqa/selenium/WebElement;)V*
+
+elementSquare*&
+$
+%0org.openqa.selenium.WebElement2.updateWebEle(Lorg/openqa/selenium/WebElement;)i
+g
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java^ ^(
+valueSquare"__id*
+""*
+40
+34*¿
+20F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java{ {(#h
+f
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java{ {(#
+itemSquare"__id*
+""*
+21
+0*§
+21F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java| |(,Ò
+Ï
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java| |(8
+%28void";MinesweeperLogic#checkAndClearSquares(LSquare;LGameState;)V*"
+MinesweeperLogic*
+
+itemSquare*
+
+game	GameState*
+20*•
+22F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java{& {(-À½
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.java{& {(E
+%27java.util.List".Square#getSurroundingSquares()Ljava/util/List;*
+
+elementSquare2getSurroundingSquares()*
+20*ð
+23F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaz z(›˜
+F
+<C:/Users/cde/MineSweeper/src/main/java/MinesweeperLogic.javaz z(,
+%26void"Square#setCleared(Z)V*
+
+elementSquare*
+""2setCleared(Z)*
+22:
+elementSquare:
+game	GameStateB"
+MinesweeperLogic

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class minesweeperSolver {
+public class MinesweeperApplication {
 
     public static void main(String args[]) {
         Scanner input = new Scanner(System.in);
@@ -9,7 +9,7 @@ public class minesweeperSolver {
             System.out.println("Easy (e), Medium (m), or Hard (h)");
             String inputString = input.next();
             if (inputString.equals("e") || inputString.equals("m") || inputString.equals("h")) {
-                MinesweeperLogic.startGame(inputString);
+                MinesweeperSolver.startGame(inputString);
                 correctInput = false;
             } else {
                 System.out.println("Please input e, m or h");

@@ -7,12 +7,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-class MinesweeperLogic {
+class MinesweeperSolver {
     private static int noOfBombs;
     private static int iterationCount;
     private static boolean gameFinished = false;
     private static Random rand = new Random();
-
 
     static void startGame(String difficulty) {
         WebDriver driver = new FirefoxDriver();
@@ -154,4 +153,6 @@ class MinesweeperLogic {
             }
         }
     }
+
+    private void MineSweeperSolver(){}
 }

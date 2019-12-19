@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: SquareTest
 -------------------------------------------------------------------------------
-Tests run: 14, Failures: 0, Errors: 14, Skipped: 0, Time elapsed: 0.328 sec <<< FAILURE!
-coordinateCenterSquareDimsOver10Test(SquareTest)  Time elapsed: 0.144 sec  <<< ERROR!
+Tests run: 14, Failures: 0, Errors: 14, Skipped: 0, Time elapsed: 0.226 sec <<< FAILURE!
+coordinateCenterSquareDimsOver10Test(SquareTest)  Time elapsed: 0.108 sec  <<< ERROR!
 java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.gecko.driver system property; for more information, see https://github.com/mozilla/geckodriver. The latest version can be downloaded from https://github.com/mozilla/geckodriver/releases
 	at com.google.common.base.Preconditions.checkState(Preconditions.java:738)
 	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:124)
@@ -44,7 +44,7 @@ java.lang.IllegalStateException: The path to the driver executable must be set b
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-coordinateCenterSquareDimsOver10Test(SquareTest)  Time elapsed: 0.144 sec  <<< ERROR!
+coordinateCenterSquareDimsOver10Test(SquareTest)  Time elapsed: 0.109 sec  <<< ERROR!
 java.lang.NullPointerException
 	at SquareTest.tearDown(SquareTest.java:31)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -77,7 +77,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-coordinateTopLeftCornerSquareDimsOver10Test(SquareTest)  Time elapsed: 0.014 sec  <<< ERROR!
+coordinateTopLeftCornerSquareDimsOver10Test(SquareTest)  Time elapsed: 0.01 sec  <<< ERROR!
 java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.gecko.driver system property; for more information, see https://github.com/mozilla/geckodriver. The latest version can be downloaded from https://github.com/mozilla/geckodriver/releases
 	at com.google.common.base.Preconditions.checkState(Preconditions.java:738)
 	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:124)
@@ -119,7 +119,7 @@ java.lang.IllegalStateException: The path to the driver executable must be set b
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-coordinateTopLeftCornerSquareDimsOver10Test(SquareTest)  Time elapsed: 0.014 sec  <<< ERROR!
+coordinateTopLeftCornerSquareDimsOver10Test(SquareTest)  Time elapsed: 0.011 sec  <<< ERROR!
 java.lang.NullPointerException
 	at SquareTest.tearDown(SquareTest.java:31)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -152,7 +152,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-coordinateTopRightCornerSquareDimsOver10Test(SquareTest)  Time elapsed: 0.013 sec  <<< ERROR!
+coordinateTopRightCornerSquareDimsOver10Test(SquareTest)  Time elapsed: 0.011 sec  <<< ERROR!
 java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.gecko.driver system property; for more information, see https://github.com/mozilla/geckodriver. The latest version can be downloaded from https://github.com/mozilla/geckodriver/releases
 	at com.google.common.base.Preconditions.checkState(Preconditions.java:738)
 	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:124)
@@ -194,7 +194,7 @@ java.lang.IllegalStateException: The path to the driver executable must be set b
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-coordinateTopRightCornerSquareDimsOver10Test(SquareTest)  Time elapsed: 0.014 sec  <<< ERROR!
+coordinateTopRightCornerSquareDimsOver10Test(SquareTest)  Time elapsed: 0.011 sec  <<< ERROR!
 java.lang.NullPointerException
 	at SquareTest.tearDown(SquareTest.java:31)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -227,7 +227,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-coordinateXEdgeSquareDimsOver10Test(SquareTest)  Time elapsed: 0.015 sec  <<< ERROR!
+coordinateXEdgeSquareDimsOver10Test(SquareTest)  Time elapsed: 0.01 sec  <<< ERROR!
 java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.gecko.driver system property; for more information, see https://github.com/mozilla/geckodriver. The latest version can be downloaded from https://github.com/mozilla/geckodriver/releases
 	at com.google.common.base.Preconditions.checkState(Preconditions.java:738)
 	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:124)
@@ -269,7 +269,7 @@ java.lang.IllegalStateException: The path to the driver executable must be set b
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-coordinateXEdgeSquareDimsOver10Test(SquareTest)  Time elapsed: 0.015 sec  <<< ERROR!
+coordinateXEdgeSquareDimsOver10Test(SquareTest)  Time elapsed: 0.011 sec  <<< ERROR!
 java.lang.NullPointerException
 	at SquareTest.tearDown(SquareTest.java:31)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -302,7 +302,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-coordinateLeftRightCornerSquareDimsOver10Test(SquareTest)  Time elapsed: 0.015 sec  <<< ERROR!
+coordinateLeftRightCornerSquareDimsOver10Test(SquareTest)  Time elapsed: 0.01 sec  <<< ERROR!
 java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.gecko.driver system property; for more information, see https://github.com/mozilla/geckodriver. The latest version can be downloaded from https://github.com/mozilla/geckodriver/releases
 	at com.google.common.base.Preconditions.checkState(Preconditions.java:738)
 	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:124)
@@ -344,7 +344,7 @@ java.lang.IllegalStateException: The path to the driver executable must be set b
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-coordinateLeftRightCornerSquareDimsOver10Test(SquareTest)  Time elapsed: 0.015 sec  <<< ERROR!
+coordinateLeftRightCornerSquareDimsOver10Test(SquareTest)  Time elapsed: 0.01 sec  <<< ERROR!
 java.lang.NullPointerException
 	at SquareTest.tearDown(SquareTest.java:31)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -377,7 +377,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-coordinateBottomRightCornerSquareDimsOver10Test(SquareTest)  Time elapsed: 0.013 sec  <<< ERROR!
+coordinateBottomRightCornerSquareDimsOver10Test(SquareTest)  Time elapsed: 0.01 sec  <<< ERROR!
 java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.gecko.driver system property; for more information, see https://github.com/mozilla/geckodriver. The latest version can be downloaded from https://github.com/mozilla/geckodriver/releases
 	at com.google.common.base.Preconditions.checkState(Preconditions.java:738)
 	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:124)
@@ -419,7 +419,7 @@ java.lang.IllegalStateException: The path to the driver executable must be set b
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-coordinateBottomRightCornerSquareDimsOver10Test(SquareTest)  Time elapsed: 0.014 sec  <<< ERROR!
+coordinateBottomRightCornerSquareDimsOver10Test(SquareTest)  Time elapsed: 0.01 sec  <<< ERROR!
 java.lang.NullPointerException
 	at SquareTest.tearDown(SquareTest.java:31)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -452,7 +452,7 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-coordinateYEdgeSquareDimsOver10Test(SquareTest)  Time elapsed: 0.014 sec  <<< ERROR!
+coordinateYEdgeSquareDimsOver10Test(SquareTest)  Time elapsed: 0.012 sec  <<< ERROR!
 java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.gecko.driver system property; for more information, see https://github.com/mozilla/geckodriver. The latest version can be downloaded from https://github.com/mozilla/geckodriver/releases
 	at com.google.common.base.Preconditions.checkState(Preconditions.java:738)
 	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:124)
@@ -494,7 +494,7 @@ java.lang.IllegalStateException: The path to the driver executable must be set b
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-coordinateYEdgeSquareDimsOver10Test(SquareTest)  Time elapsed: 0.014 sec  <<< ERROR!
+coordinateYEdgeSquareDimsOver10Test(SquareTest)  Time elapsed: 0.013 sec  <<< ERROR!
 java.lang.NullPointerException
 	at SquareTest.tearDown(SquareTest.java:31)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
