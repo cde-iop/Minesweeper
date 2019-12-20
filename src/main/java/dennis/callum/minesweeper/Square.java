@@ -18,8 +18,12 @@ class Square {
 
     Square(WebElement webEle, int[] dimensions) {
         this.webEle = webEle;
+        //the element class is the state of the square e.g square blank, square open1, where 1 is the number on the square.
         eleClass = webEle.getAttribute("class");
         id = webEle.getAttribute("id");
+        //The id(effectively the coordinates) of the square are always in the format %s_%s where %s is a number between
+        //the dimensions and 1. If a grid is 16 x 16 : 1_1 is at the top left corner, 1_16 is the top right corner, 16_1 is bottom left
+        //16_16 is bottom right. This part fetches the coordinates if its 1 digit or two.
         if (dimensions[0] >= 10 && dimensions[1] >= 10) {
             if (id.charAt(2) == '_') {
                 if (id.length() == 5) {
@@ -62,7 +66,6 @@ class Square {
     private void setWebEle(WebElement webEle) {
         this.webEle = webEle;
         this.eleClass = webEle.getAttribute("class");
-        this.id = webEle.getAttribute("id");
         if (!eleClass.equals("square blank") && !eleClass.equals("square bombflagged")) {
             number = Integer.parseInt(eleClass.substring(eleClass.length() - 1));
         }

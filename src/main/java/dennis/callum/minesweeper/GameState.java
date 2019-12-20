@@ -37,11 +37,12 @@ class GameState {
     }
 
     WebElement getGame() {
+        //get the game web element
         return game;
     }
 
     void constructSquareList() {
-        Map<String, Square> output = new TreeMap<>();
+        Map<String, Square> output = new LinkedHashMap<>();
         String id;
         List<Square> surroundingSquares = new ArrayList<>();
         Square value;
@@ -146,6 +147,7 @@ class GameState {
         WebElement face;
         face = game.findElement(By.id("face"));
         Square value;
+        //If the number of bombs is zero the game is finished so just click all the blank squares
         if (noOfBombs == 0) {
             logger.info("Game Finished, clearing up!");
             for (Map.Entry<String, Square> entry : allSquares.entrySet()) {
@@ -156,7 +158,8 @@ class GameState {
             }
             gameFinished = true;
         }
-
+        //At the top of the game board is a face, its a smile if the game is in progress, it wears sunglasses if you win, and dies if you lose.
+        //We use that to check the state of the game
         switch (face.getAttribute("class")) {
             case "facesmile":
                 logger.info("Still solving");
@@ -198,6 +201,7 @@ class GameState {
         }
     }
     boolean checkForPattern(Square element) {
+        //For more information on minesweeper logic i.e. patterns look it up :)
         if (checkFor121H(element) || checkFor121V(element) || checkFor1221H(element) || checkFor1221V(element)){
             return true;
         }else{
