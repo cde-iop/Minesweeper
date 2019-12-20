@@ -11,7 +11,7 @@ public class MinesweeperApplication {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        Boolean correctInput = true;
+        boolean correctInput = true;
         while(correctInput) {
             logger.info("Easy (e), Medium (m), or Hard (h)");
             String inputString = input.next();

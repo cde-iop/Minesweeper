@@ -40,7 +40,6 @@ class MinesweeperSolver {
                 gameState.constructSquareList();
                 noOfBombs = 40;
                 iterationCount = 2;
-
                 break;
             case "h":
                 dimensions[0] = 16;
@@ -51,12 +50,10 @@ class MinesweeperSolver {
                 noOfBombs = 99;
                 iterationCount = 3;
                 break;
-
-
         }
         WebElement game = gameState.getGame();
         Map<String, Square> squares = gameState.getAllSquares();
-        Boolean gameStart = false;
+        boolean gameStart = false;
         String format = "%s_%s";
         while (!gameStart) {
             for (int i = 0; i < 3; i++) {

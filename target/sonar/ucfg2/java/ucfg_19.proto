@@ -1,16 +1,17 @@
 
-Mdennis.callum.minesweeper.GameState#getGame()Lorg/openqa/selenium/WebElement;Y
-OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java- -("1*¤
+Bdennis.callum.minesweeper.GameState#getAllSquares()Ljava/util/Map;Y
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java# #(%"1*‡
 1Y
-OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java. .(½
-º
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java$ $(²
+¯
 Y
-OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java. .($
-%0org.openqa.selenium.WebElement"__id*1*/%
-#dennis.callum.minesweeper.GameState"
-game"ƒ
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java$ $(
+%0java.util.Map"__id*7*5%
+#dennis.callum.minesweeper.GameState"
+
+allSquares"r
 Y
-OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java. .(&
-$
-%0org.openqa.selenium.WebElementB'%
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java$ $(
+
+%0java.util.MapB'%
 #dennis.callum.minesweeper.GameState
