@@ -9,7 +9,7 @@ public class MinesweeperApplication {
     private static final Logger logger = Logger.getLogger(MinesweeperApplication.class.getName());
 
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Boolean correctInput = true;
         while(correctInput) {

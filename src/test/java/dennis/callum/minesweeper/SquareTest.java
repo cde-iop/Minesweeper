@@ -10,11 +10,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class SquareTest {
-    WebDriver driver;
-    WebElement testElement;
-    int[] dimensions = new int[2];
-    GameState game;
-    WebElement gameEle;
+    private WebDriver driver;
+    private WebElement testElement;
+    private int[] dimensions = new int[2];
+    private GameState game;
+    private WebElement gameEle;
 
     @Before
     public void setup(){

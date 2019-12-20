@@ -1,573 +1,195 @@
 
-QGameState#checkForAndDealWith1221IfBlanksBelow(LSquare;LSquare;LSquare;LSquare;)ZA
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java˝ ˝(8"54*Î
-46A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÉ5 É(Dòï
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÉ5 É(T	
-%7int"Square#getBombsFound()I*
-
-adjacentSquare2Square2getBombsFound()*
-44
-1*ﬂ
-24A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaâ â(èå
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaâ( â(=
+6dennis.callum.minesweeper.GameState#isGameFinished(I)Z[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javañ ñ("13* 	
+13[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaó ó($ñ
+ì
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaò ò(&
+faceorg.openqa.selenium.WebElement"__id*
+""ø
+º
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaô ô($
+%0org.openqa.selenium.WebElement"__id*1*/%
+#dennis.callum.minesweeper.GameState"
+gameÎ
+Ë
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaô  ô(-
+%1org.openqa.selenium.By"Eorg.openqa.selenium.By#id(Ljava/lang/String;)Lorg/openqa/selenium/By;*"
+org.openqa.selenium.By*
+face€ÿ
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaô ô(.$
+%2org.openqa.selenium.WebElement"dorg.openqa.selenium.WebElement#findElement(Lorg/openqa/selenium/By;)Lorg/openqa/selenium/WebElement;*&
+$
+%0org.openqa.selenium.WebElement*
+
+%1org.openqa.selenium.By2%findElement(Lorg/openqa/selenium/By;)∂
+≥
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaô ô(.&
+faceorg.openqa.selenium.WebElement"__id*&
+$
+%2org.openqa.selenium.WebElement*
+2
+12*î
+2[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java¶ ¶(£†
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java¶ ¶(*
+%22java.lang.String"Qorg.openqa.selenium.WebElement#getAttribute(Ljava/lang/String;)Ljava/lang/String;*(
+&
+faceorg.openqa.selenium.WebElement*	
+class2 getAttribute(Ljava/lang/String;)*
+3
+4
+5
+6*û
+3[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaµ  µ($è
+å
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java∂ ∂(
+%18java.util.logging.Logger"__id*
+""ôñ
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java∂ ∂(T
+%19void"2java.util.logging.Logger#info(Ljava/lang/String;)V*!
+
+%18java.util.logging.Logger*97
+5Cannot determine state of the game... Ending the game2info(Ljava/lang/String;)¡
+æ
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java∑ ∑($
+%20org.openqa.selenium.WebDriver"__id*3*1%
+#dennis.callum.minesweeper.GameState"
+driverƒ¡
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java∑ ∑(
+%21void"%org.openqa.selenium.WebDriver#quit()V*&
+$
+%20org.openqa.selenium.WebDriver2quit()*
+1*˘
+4[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaØ Ø(è
+å
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java± ±(
+%14java.util.logging.Logger"__id*
+""ÙÒ
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java± ±(/
+%15void"2java.util.logging.Logger#info(Ljava/lang/String;)V*!
+
+%14java.util.logging.Logger*
+Lost the game...2info(Ljava/lang/String;)¡
+æ
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java≤ ≤($
+%16org.openqa.selenium.WebDriver"__id*3*1%
+#dennis.callum.minesweeper.GameState"
+driverƒ¡
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java≤ ≤(
+%17void"%org.openqa.selenium.WebDriver#quit()V*&
+$
+%16org.openqa.selenium.WebDriver2quit()*
+1*à
+5[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java™ ™(è
+å
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java¨ ¨(
+%10java.util.logging.Logger"__id*
+""ÉÄ
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java¨ ¨(>
+%11void"2java.util.logging.Logger#info(Ljava/lang/String;)V*!
+
+%10java.util.logging.Logger*#!
+Finished the game successfully!2info(Ljava/lang/String;)¡
+æ
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java≠ ≠($
+%12org.openqa.selenium.WebDriver"__id*3*1%
+#dennis.callum.minesweeper.GameState"
+driverƒ¡
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java≠ ≠(
+%13void"%org.openqa.selenium.WebDriver#quit()V*&
+$
+%12org.openqa.selenium.WebDriver2quit()*
+1*Ë
+6[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaß ß(é
+ã
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java® ®(
+%8java.util.logging.Logger"__id*
+""ÔÏ
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.java® ®(,
 
-%35int"Square#getBombsFound()I*
-
-thingSquare2getBombsFound()*
-23*‡
-47A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÉ É(&êç
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÉ É(2	
-%6int"Square#getNumber()I*
-
-adjacentSquare2Square2getNumber()*
-46*á
-25A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaà$ à(k∑¥
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaà$ à(k
-%34java.util.List".Square#getSurroundingSquares()Ljava/util/List;*
+%9void"2java.util.logging.Logger#info(Ljava/lang/String;)V* 
+
+%8java.util.logging.Logger*
+Still solving2info(Ljava/lang/String;)*
+1*¯
+8[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaù ù(0å
+â
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaù ù(0
+entryjava.util.Map$Entry"__id*
+""*
+2
+10*≠
+10[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaû û(ƒ¡
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaû û((
+%7"0java.util.Map$Entry#getValue()Ljava/lang/Object;*
+
+entryjava.util.Map$Entry2
+getValue()*
+8*·
+11[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaù3 ù(=¥
+±
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaù3 ù(=
+%5java.util.Map"__id*7*5%
+#dennis.callum.minesweeper.GameState"
 
-%33Square2getSurroundingSquares()*
-22*‚
-26A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaà$ à(Sí
-è
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaà$ à(S
-%33Square"__mapGet*
-
-%30java.util.Map*
-
-%32java.lang.String*
-25*È
-49A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÇ3 Ç(@ñì
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÇ3 Ç(P	
-%5int"Square#getBombsFound()I*
-
-currentSquareSquare2getBombsFound()*
-47
-1*∆
-27A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaà$ à(.Ä
-~
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaà$ à(.
-%30java.util.Map"__id**
-	GameState"
+allSquares¡æ
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaù3 ù(H
+%6java.util.Set"'java.util.Map#entrySet()Ljava/util/Set;*
+
+%5java.util.Map2
+entrySet()*
+8*¯
+12[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaú ú(é
+ã
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaú ú(
+%3java.util.logging.Logger"__id*
+""˝˙
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaú ú(6
 
-allSquares
-}
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaàA à(G
-%31java.lang.String"__id**
-	GameState"
-formatÚ
-Ô
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaà3 à(R
-%32java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
-java.lang.String*
-
-%31java.lang.String*
-""*
-""*
-26*∆
-28A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaá á(YˆÛ
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaá á(Y
-%29void"9GameState#contextClick(Lorg/openqa/selenium/WebElement;)V*
-	GameState*'
-%
-%28org.openqa.selenium.WebElement2.contextClick(Lorg/openqa/selenium/WebElement;)*
-27*è
-29A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaá á(Xøº
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaá á(X%
-%28org.openqa.selenium.WebElement"2Square#getWebEle()Lorg/openqa/selenium/WebElement;*
-
-%27Square2getWebEle()*
-28*ﬁ
-50A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÇ Ç($éã
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÇ Ç(0	
-%4int"Square#getNumber()I*
-
-currentSquareSquare2getNumber()*
-49*Î
-52A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÅ. Å(=òï
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÅ. Å(M	
-%3int"Square#getBombsFound()I*
-
-adjacentSquare1Square2getBombsFound()*
-50
-1*‚
-30A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaá á(Lí
-è
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaá á(L
-%27Square"__mapGet*
-
-%24java.util.Map*
-
-%26java.lang.String*
-29*‡
-53A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÅ Å(êç
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÅ Å(+	
-%2int"Square#getNumber()I*
-
-adjacentSquare1Square2getNumber()*
-52*∆
-31A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaá á(Ä
-~
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaá á('
-%24java.util.Map"__id**
-	GameState"
-
-allSquares
-}
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaá: á(@
-%25java.lang.String"__id**
-	GameState"
-formatÚ
-Ô
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaá, á(K
-%26java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
-java.lang.String*
-
-%25java.lang.String*
-""*
-""*
-30*ã
-54A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java˛ ˛(úô
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java˛ ˛(.
-%0$Array"Square#getCoordinates()[I*
-
-currentSquareSquare2getCoordinates()úô
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaˇ ˇ(.
-%1$Array"Square#getCoordinates()[I*
-
-currentSquareSquare2getCoordinates()*
-53*·
-10A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaè è(Cí
-è
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaè è(C
-%53Square"__mapGet*
-
-%50java.util.Map*
-
-%52java.lang.String*
-9*∆
-11A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaè è(Ä
-~
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaè è(
-%50java.util.Map"__id**
-	GameState"
-
-allSquares
-}
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaè- è(3
-%51java.lang.String"__id**
-	GameState"
-formatÚ
-Ô
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaè è(B
-%52java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
-java.lang.String*
-
-%51java.lang.String*
-""*
-""*
-10*©
-33A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÜ` Ü(e~
-|
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÜ` Ü(e
-%22java.lang.String"__id**
-	GameState"
-blank÷”
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÜ Ü(f
-%23boolean",java.lang.String#equals(Ljava/lang/Object;)Z*
-
-%21java.lang.String*
-
-%22java.lang.String2equals(Ljava/lang/Object;)*
-31
-1*˜
-34A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÜ Ü(Xß§
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÜ Ü(X
-%21java.lang.String"&Square#getEleClass()Ljava/lang/String;*
-
-%20Square2getEleClass()*
-33*∑
-12A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaå å(!d
-b
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaå å(!
-thingSquare"__id*
-""*
-14
-11*‚
-35A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÜ Ü(Jí
-è
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÜ Ü(J
-%20Square"__mapGet*
-
-%17java.util.Map*
-
-%19java.lang.String*
-34*Í
-13A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaç@ ç(Aöó
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaç ç(B
-%49void"Square#setBombsFound(I)V*
-
-thingSquare*
-""2setBombsFound(I)*
-12*∆
-36A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÜ Ü(!Ä
-~
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÜ Ü(!
-%17java.util.Map"__id**
-	GameState"
-
-allSquares
-}
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÜ4 Ü(:
-%18java.lang.String"__id**
-	GameState"
-formatÚ
-Ô
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÜ& Ü(I
-%19java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
-java.lang.String*
-
-%18java.lang.String*
-""*
-""*
-35*ﬂ
-14A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaç ç(èå
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaç( ç(=
-
-%48int"Square#getBombsFound()I*
-
-thingSquare2getBombsFound()*
-13*á
-15A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaå$ å(o∑¥
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaå$ å(o
-%47java.util.List".Square#getSurroundingSquares()Ljava/util/List;*
-
-%46Square2getSurroundingSquares()*
-12*©
-38A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÖ\ Ö(a~
-|
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÖ\ Ö(a
-%15java.lang.String"__id**
-	GameState"
-blank÷”
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÖ Ö(b
-%16boolean",java.lang.String#equals(Ljava/lang/Object;)Z*
-
-%14java.lang.String*
-
-%15java.lang.String2equals(Ljava/lang/Object;)*
-36
-1*‚
-16A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaå$ å(Wí
-è
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaå$ å(W
-%46Square"__mapGet*
-
-%43java.util.Map*
-
-%45java.lang.String*
-15*˜
-39A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÖ Ö(Tß§
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÖ Ö(T
-%14java.lang.String"&Square#getEleClass()Ljava/lang/String;*
-
-%13Square2getEleClass()*
-38*∆
-17A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaå$ å(.Ä
-~
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaå$ å(.
-%43java.util.Map"__id**
-	GameState"
-
-allSquares
-}
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaåA å(G
-%44java.lang.String"__id**
-	GameState"
-formatÚ
-Ô
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaå3 å(V
-%45java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
-java.lang.String*
-
-%44java.lang.String*
-""*
-""*
-16*∆
-18A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaã ã(]ˆÛ
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaã ã(]
-%42void"9GameState#contextClick(Lorg/openqa/selenium/WebElement;)V*
-	GameState*'
-%
-%41org.openqa.selenium.WebElement2.contextClick(Lorg/openqa/selenium/WebElement;)*
-17*è
-19A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaã ã(\øº
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaã ã(\%
-%41org.openqa.selenium.WebElement"2Square#getWebEle()Lorg/openqa/selenium/WebElement;*
-
-%40Square2getWebEle()*
-18*ì
-1A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javañ ñ("K
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javañ ñ(
-""*ì
-3A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaë ë("K
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaë ë(
-""*¸
-4A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaê ê(WÆ´
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaê ê(W
-%61void"'org.openqa.selenium.WebElement#click()V*'
-%
-%60org.openqa.selenium.WebElement2click()*
-3*ç
-5A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaê ê(Oøº
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaê ê(O%
-%60org.openqa.selenium.WebElement"2Square#getWebEle()Lorg/openqa/selenium/WebElement;*
-
-%59Square2getWebEle()*
-4*‡
-6A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaê ê(Cí
-è
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaê ê(C
-%59Square"__mapGet*
-
-%56java.util.Map*
-
-%58java.lang.String*
-5*ƒ
-7A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaê ê(Ä
-~
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaê ê(
-%56java.util.Map"__id**
-	GameState"
-
-allSquares
-}
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaê- ê(3
-%57java.lang.String"__id**
-	GameState"
-formatÚ
-Ô
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaê ê(B
-%58java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
-java.lang.String*
-
-%57java.lang.String*
-""*
-""*
-6*¸
-8A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaè è(WÆ´
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaè è(W
-%55void"'org.openqa.selenium.WebElement#click()V*'
-%
-%54org.openqa.selenium.WebElement2click()*
-7*ç
-9A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaè è(Oøº
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaè è(O%
-%54org.openqa.selenium.WebElement"2Square#getWebEle()Lorg/openqa/selenium/WebElement;*
-
-%53Square2getWebEle()*
-8*‚
-40A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÖ Ö(Fí
-è
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÖ Ö(F
-%13Square"__mapGet*
-
-%10java.util.Map*
-
-%12java.lang.String*
-39*∆
-41A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÖ Ö(!Ä
-~
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÖ Ö(!
-%10java.util.Map"__id**
-	GameState"
-
-allSquares
-}
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÖ4 Ö(:
-%11java.lang.String"__id**
-	GameState"
-formatÚ
-Ô
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÖ& Ö(E
-%12java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
-java.lang.String*
-
-%11java.lang.String*
-""*
-""*
-40*‚
-20A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaã ã(Pí
-è
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaã ã(P
-%40Square"__mapGet*
-
-%37java.util.Map*
-
-%39java.lang.String*
-19*Î
-43A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÑ5 Ñ(Dòï
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÑ5 Ñ(T	
-%9int"Square#getBombsFound()I*
-
-adjacentSquare3Square2getBombsFound()*
-41
-1*∆
-21A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaã ã(Ä
-~
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaã ã('
-%37java.util.Map"__id**
-	GameState"
-
-allSquares
-}
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaã: ã(@
-%38java.lang.String"__id**
-	GameState"
-formatÚ
-Ô
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaã, ã(O
-%39java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
-java.lang.String*
-
-%38java.lang.String*
-""*
-""*
-20*‡
-44A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÑ Ñ(&êç
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÑ Ñ(2	
-%8int"Square#getNumber()I*
-
-adjacentSquare3Square2getNumber()*
-43*∑
-22A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaà à(!d
-b
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaà à(!
-thingSquare"__id*
-""*
-24
-21*Í
-23A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaâ@ â(Aöó
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaâ â(B
-%36void"Square#setBombsFound(I)V*
-
-thingSquare*
-""2setBombsFound(I)*
-22:
-adjacentSquare1Square:
-currentSquareSquare:
-adjacentSquare2Square:
-adjacentSquare3SquareB
-	GameState
+%4void"2java.util.logging.Logger#info(Ljava/lang/String;)V* 
+
+%3java.util.logging.Logger*
+Game Finished, clearing up!2info(Ljava/lang/String;)*
+11*«
+1[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaª ª("e
+[
+OC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/GameState.javaª ª(
+"":
+""B'%
+#dennis.callum.minesweeper.GameState

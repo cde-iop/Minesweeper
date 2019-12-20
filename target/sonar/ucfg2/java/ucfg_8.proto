@@ -1,59 +1,10 @@
 
-$GameState#checkForPattern(LSquare;)ZA
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÌ Ì("6*“
-2A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÎ Î("K
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÎ Î(
-""*î
-3A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÍX Í(e
-š
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÍX Í(n
-%3boolean""GameState#checkFor1221V(LSquare;)Z*
-	GameState*
-
-elementSquare*
-2
-1*î
-4A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÍ> Í(K
-š
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÍ> Í(T
-%2boolean""GameState#checkFor1221H(LSquare;)Z*
-	GameState*
-
-elementSquare*
-2
-3*í
-5A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÍ% Í(1œ
-™
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÍ% Í(:
-%1boolean"!GameState#checkFor121V(LSquare;)Z*
-	GameState*
-
-elementSquare*
-2
-4*í
-6A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÍ Í(œ
-™
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÍ Í(!
-%0boolean"!GameState#checkFor121H(LSquare;)Z*
-	GameState*
-
-elementSquare*
-2
-5*“
-1A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÐ Ð("K
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaÐ Ð(
-"":
-elementSquareB
-	GameState
+3dennis.callum.minesweeper.Square#getCoordinates()[IV
+LC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/Square.java[
+ [("1*½
+1V
+LC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/Square.java\ \("`
+V
+LC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/Square.java\ \(
+""B$"
+ dennis.callum.minesweeper.Square

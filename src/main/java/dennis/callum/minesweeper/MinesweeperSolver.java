@@ -151,5 +151,9 @@ class MinesweeperSolver {
             }
         }
     }
+    private MinesweeperSolver(){
+        //So that people can't instantiate the MineSweeperSolverClass
+        throw new UnsupportedOperationException("Don't instantiate the Minesweeper Solver class");
+    }
 }
 

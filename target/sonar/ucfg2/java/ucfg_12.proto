@@ -1,182 +1,9 @@
 
-"GameState#checkFor1221H(LSquare;)ZA
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java› ›(!"13*ì
-13A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaœ œ(+œ™
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaœ œ(<
-%0$Array"Square#getCoordinates()[I*
-
-currentSquareSquare2getCoordinates()*
-12*“
-2A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¦ ¦(x"K
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¦ ¦(x
-""*ò
-3A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¦ ¦(;¤
-¡
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¦ ¦(w
-%14boolean"QGameState#checkForAndDealWith1221IfBlanksBelow(LSquare;LSquare;LSquare;LSquare;)Z*
-	GameState*
-
-squareToLeftSquare*
-
-currentSquareSquare*
-
-squareToRightSquare*
-
-squareToRight2Square*
-2*“
-4A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¤ ¤("K
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¤ ¤(
-""*í
-6A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¢ ¢(Tv
-t
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¢ ¢(T
-squareToRight2Square"__id*
-
-%12Square¤
-¡
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java£ £(o
-%13boolean"QGameState#checkForAndDealWith1221IfBlanksAbove(LSquare;LSquare;LSquare;LSquare;)Z*
-	GameState*
-
-squareToLeftSquare*
-
-currentSquareSquare*
-
-squareToRightSquare*
-
-squareToRight2Square*
-3
-4*ß
-7A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¢$ ¢(S‘
-Ž
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¢$ ¢(S
-%12Square"__mapGet*
-
-%9java.util.Map*
-
-%11java.lang.String*
-6*¸
-8A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¡ ¡(St
-r
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¡ ¡(S
-squareToRightSquare"__id*
-
-%8Square
-}
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¢$ ¢(.
-%9java.util.Map"__id**
-	GameState"
-
-allSquares
-}
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¢A ¢(G
-%10java.lang.String"__id**
-	GameState"
-formatò
-ï
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¢3 ¢(R
-%11java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
-java.lang.String*
-
-%10java.lang.String*
-""*
-""*
-7*Ý
-9A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¡# ¡(R
-Œ
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¡# ¡(R
-%8Square"__mapGet*
-
-%5java.util.Map*
-
-%7java.lang.String*
-8*µ
-10A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java   (Rs
-q
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java   (R
-squareToLeftSquare"__id*
-
-%4Square
-}
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¡# ¡(-
-%5java.util.Map"__id**
-	GameState"
-
-allSquares~
-|
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¡@ ¡(F
-%6java.lang.String"__id**
-	GameState"
-formatð
-í
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java¡2 ¡(Q
-%7java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
-java.lang.String*
-
-%6java.lang.String*
-""*
-""*
-9*ß
-11A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java "  (Q
-Œ
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java "  (Q
-%4Square"__mapGet*
-
-%1java.util.Map*
-
-%3java.lang.String*
-10*Á
-12A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java "  (,
-}
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java "  (,
-%1java.util.Map"__id**
-	GameState"
-
-allSquares~
-|
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java ?  (E
-%2java.lang.String"__id**
-	GameState"
-formatð
-í
-A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java 1  (P
-%3java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*"
-java.lang.String*
-
-%2java.lang.String*
-""*
-""*
-11:
-currentSquareSquareB
-	GameState
+-dennis.callum.minesweeper.Square#isChecked()ZV
+LC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/Square.javal l("1*½
+1V
+LC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/Square.javam m("`
+V
+LC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/Square.javam m(
+""B$"
+ dennis.callum.minesweeper.Square

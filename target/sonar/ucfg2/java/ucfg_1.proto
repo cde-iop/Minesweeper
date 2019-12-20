@@ -1,17 +1,16 @@
 
-(GameState#getAllSquares()Ljava/util/Map;?
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java' '(%"1*ù
-1?
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java( ((}
-{
-?
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java( ((
-%0java.util.Map"__id**
-	GameState"
-
-allSquares"X
-?
-5C:/Users/cde/MineSweeper/src/main/java/GameState.java( ((
-
-%0java.util.MapB
-	GameState
+Ldennis.callum.minesweeper.Square#getWebEle()Lorg/openqa/selenium/WebElement;V
+LC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/Square.java: :("1*ö
+1V
+LC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/Square.java; ;(π
+∂
+V
+LC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/Square.java; ;($
+%0org.openqa.selenium.WebElement"__id*0*."
+ dennis.callum.minesweeper.Square"
+webEle"Ä
+V
+LC:/Users/cde/MineSweeper/src/main/java/dennis/callum/minesweeper/Square.java; ;(&
+$
+%0org.openqa.selenium.WebElementB$"
+ dennis.callum.minesweeper.Square

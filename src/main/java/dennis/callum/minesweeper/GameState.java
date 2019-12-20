@@ -10,17 +10,11 @@ import java.util.logging.Logger;
 
 class GameState {
     private static final Logger logger = Logger.getLogger(GameState.class.getName());
-
     private WebDriver driver;
-
     private int[] dimensions;
-
     private Map<String, Square> allSquares;
-
     private WebElement game;
-
     private String format = "%s_%s";
-
     private String blank = "square blank";
 
     GameState(int[] dimensions, WebDriver driver) {
@@ -221,13 +215,16 @@ class GameState {
             if(checkFor11AndClear(currentSquare, squareToLeft)){
                 return true;
             }
-        } catch (NullPointerException e) {}
+        } catch (NullPointerException e) {
+            //gets here if there is no square to the left
+        }
         try {
             Square squareToRight = allSquares.get(String.format(format, y, x + 1));
             if(checkFor11AndClear(currentSquare, squareToRight)){
                 return true;
             }
         } catch (NullPointerException e) {
+            //gets here if there is no square to the right
         }
         try {
             Square squareAbove = allSquares.get(String.format(format, y - 1, x));
@@ -235,6 +232,7 @@ class GameState {
                 return true;
             }
         } catch (NullPointerException e) {
+            //gets here if there is no square to the above
         }
         try {
             Square squareBelow = allSquares.get(String.format(format, y + 1, x));
@@ -242,6 +240,7 @@ class GameState {
                 return true;
             }
         }catch(NullPointerException e){
+            //if it gets here its checked that theres no valid squares above, left or right and now there isnt a square below so its not a 11
             return false;
         }
         return false;
@@ -356,25 +355,31 @@ class GameState {
                 return true;
             }
         }catch(NullPointerException e){
+            //Gets here if there is no square to the left
         }
         try{
             Square squareToRight = allSquares.get(String.format(format, y, x + 1));
             if(markIf21(currentSquare, squareToRight)){
                 return true;
             }
-        }catch(NullPointerException e){ }
+        }catch(NullPointerException e){
+            //Gets here if there is no square to the right
+        }
          try{
              Square squareAbove = allSquares.get(String.format(format, y - 1, x));
              if(markIf21(currentSquare, squareAbove)){
                  return true;
              }
-         }catch(NullPointerException e){ }
+         }catch(NullPointerException e){
+             //Gets here if there is no square above
+         }
          try{
              Square squareBelow = allSquares.get(String.format(format, y + 1, x));
              if(markIf21(currentSquare, squareBelow)){
                  return true;
              }
          }catch(NullPointerException e){
+             //if it gets here its checked that theres no valid squares above, left or right and now there isnt a square below so its not a 21
              return false;
          }
 
