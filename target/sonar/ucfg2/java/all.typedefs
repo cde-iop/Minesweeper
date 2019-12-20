@@ -18,23 +18,33 @@ hashCode()java.lang.Object#hashCode()I&
 <init>()java.lang.Object#<init>()V$
 wait(J)java.lang.Object#wait(J)V&
 wait(JI)java.lang.Object#wait(JI)V5
-clone()*java.lang.Object#clone()Ljava/lang/Object;œ
-	GameStatejava.lang.Object9
-checkFor121(LSquare;) GameState#checkFor121(LSquare;)ZA
-checkForPattern(LSquare;)$GameState#checkForPattern(LSquare;)Z/
-isGameFinished()GameState#isGameFinished()Z;
-checkFor1221(LSquare;)!GameState#checkFor1221(LSquare;)Z@
-	getGame()3GameState#getGame()Lorg/openqa/selenium/WebElement;9
+clone()*java.lang.Object#clone()Ljava/lang/Object;Æ
+	GameStatejava.lang.Object›
+FcheckForAndDealWith1221IfBlanksAbove(LSquare;LSquare;LSquare;LSquare;)QGameState#checkForAndDealWith1221IfBlanksAbove(LSquare;LSquare;LSquare;LSquare;)Z™
+EcheckForAndDealWith1221IfBlanksLeft(LSquare;LSquare;LSquare;LSquare;)PGameState#checkForAndDealWith1221IfBlanksLeft(LSquare;LSquare;LSquare;LSquare;)Z=
+checkFor1221V(LSquare;)"GameState#checkFor1221V(LSquare;)ZA
+checkForPattern(LSquare;)$GameState#checkForPattern(LSquare;)Z‰
+=checkForAndDealWith121IfBlanksBelow(LSquare;LSquare;LSquare;)HGameState#checkForAndDealWith121IfBlanksBelow(LSquare;LSquare;LSquare;)Z‡
+<checkForAndDealWith121IfBlanksLeft(LSquare;LSquare;LSquare;)GGameState#checkForAndDealWith121IfBlanksLeft(LSquare;LSquare;LSquare;)Z@
+	getGame()3GameState#getGame()Lorg/openqa/selenium/WebElement;;
+checkFor121V(LSquare;)!GameState#checkFor121V(LSquare;)Z9
 constructSquareList() GameState#constructSquareList()V;
 getAllSquares()(GameState#getAllSquares()Ljava/util/Map;7
-checkFor21(LSquare;)GameState#checkFor21(LSquare;)ZW
-$checkFor11AndClear(LSquare;LSquare;)/GameState#checkFor11AndClear(LSquare;LSquare;)Za
+checkFor21(LSquare;)GameState#checkFor21(LSquare;)Z›
+FcheckForAndDealWith1221IfBlanksBelow(LSquare;LSquare;LSquare;LSquare;)QGameState#checkForAndDealWith1221IfBlanksBelow(LSquare;LSquare;LSquare;LSquare;)ZW
+$checkFor11AndClear(LSquare;LSquare;)/GameState#checkFor11AndClear(LSquare;LSquare;)Z›
+FcheckForAndDealWith1221IfBlanksRight(LSquare;LSquare;LSquare;LSquare;)QGameState#checkForAndDealWith1221IfBlanksRight(LSquare;LSquare;LSquare;LSquare;)Z=
+checkFor1221H(LSquare;)"GameState#checkFor1221H(LSquare;)Za
 )<init>([ILorg/openqa/selenium/WebDriver;)4GameState#<init>([ILorg/openqa/selenium/WebDriver;)Vk
 .contextClick(Lorg/openqa/selenium/WebElement;)9GameState#contextClick(Lorg/openqa/selenium/WebElement;)V+
-resetChecked()GameState#resetChecked()VJ
+resetChecked()GameState#resetChecked()V1
+isGameFinished(I)GameState#isGameFinished(I)Z‰
+=checkForAndDealWith121IfBlanksRight(LSquare;LSquare;LSquare;)HGameState#checkForAndDealWith121IfBlanksRight(LSquare;LSquare;LSquare;)Z
+?checkForAndDealWith121IfBlanksToAbove(LSquare;LSquare;LSquare;)JGameState#checkForAndDealWith121IfBlanksToAbove(LSquare;LSquare;LSquare;)ZJ
 getBlankList(LSquare;)0GameState#getBlankList(LSquare;)Ljava/util/List;7
 checkFor11(LSquare;)GameState#checkFor11(LSquare;)ZC
-markIf21(LSquare;LSquare;)%GameState#markIf21(LSquare;LSquare;)Z(
+markIf21(LSquare;LSquare;)%GameState#markIf21(LSquare;LSquare;)Z;
+checkFor121H(LSquare;)!GameState#checkFor121H(LSquare;)Z(
 java.io.Serializablejava.lang.ObjectŸ
 
 org.openqa.selenium.Byjava.lang.ObjectP
@@ -333,7 +343,7 @@ iterator()2java.util.ArrayList#iterator()Ljava/util/Iterator;I
 spliterator()8java.util.ArrayList#spliterator()Ljava/util/Spliterator;1
 isClear([JI)!java.util.ArrayList#isClear([JI)Zk
 )writeObject(Ljava/io/ObjectOutputStream;)>java.util.ArrayList#writeObject(Ljava/io/ObjectOutputStream;)V%
-size()java.util.ArrayList#size()I”
+size()java.util.ArrayList#size()Iî
 Squarejava.lang.Objecth
 .updateWebEle(Lorg/openqa/selenium/WebElement;)6Square#updateWebEle(Lorg/openqa/selenium/WebElement;)V`
 *addAllSurroundingSquares(Ljava/util/List;)2Square#addAllSurroundingSquares(Ljava/util/List;)V"
@@ -343,7 +353,8 @@ iterator()2java.util.ArrayList#iterator()Ljava/util/Iterator;I
 setCleared(Z)Square#setCleared(Z)V`
 *<init>(Lorg/openqa/selenium/WebElement;[I)2Square#<init>(Lorg/openqa/selenium/WebElement;[I)VA
 getWebEle()2Square#getWebEle()Lorg/openqa/selenium/WebElement;Z
-'setSurroundingSquares(Ljava/util/List;)/Square#setSurroundingSquares(Ljava/util/List;)V*
+'setSurroundingSquares(Ljava/util/List;)/Square#setSurroundingSquares(Ljava/util/List;)VX
+&iterateSurroundingSquares(LGameState;).Square#iterateSurroundingSquares(LGameState;)V*
 getBombsFound()Square#getBombsFound()I"
 isChecked()Square#isChecked()Z7
 getEleClass()&Square#getEleClass()Ljava/lang/String;I

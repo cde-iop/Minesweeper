@@ -1,3 +1,5 @@
+package dennis.callum.minesweeper;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.WebDriver;
@@ -129,10 +131,10 @@ class MinesweeperSolver {
                     }
 
                 }
-                else if (iterationCount <= 0) {
+                else if (iterationCount < 0) {
                     logger.info("Guessing random square");
                     blankList.get(rand.nextInt(blankList.size())).getWebEle().click();
-                    iterationCount = 2;
+                    iterationCount = 1;
                 } else {
                     element.setChecked(true);
                     if(game.checkFor11(element)){

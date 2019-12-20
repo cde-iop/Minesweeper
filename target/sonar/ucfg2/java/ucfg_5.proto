@@ -1,28 +1,27 @@
 
-GameState#isGameFinished()ZA
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaâ â("2*°
-
-2A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaä ä(${
+GameState#isGameFinished(I)ZA
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaî î("13*¯
+13A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaï ï(${
 y
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaã ã(&
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javañ ñ(&
 faceorg.openqa.selenium.WebElement"__id*
 ""ã
 à
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaå å($
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaó ó($
 %0org.openqa.selenium.WebElement"__id**
 	GameState"
 game—
 Œ
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaå  å(-
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaó  ó(-
 %1org.openqa.selenium.By"Eorg.openqa.selenium.By#id(Ljava/lang/String;)Lorg/openqa/selenium/By;*"
 org.openqa.selenium.By*
 face¡æ
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaå å(.$
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaó ó(.$
 %2org.openqa.selenium.WebElement"dorg.openqa.selenium.WebElement#findElement(Lorg/openqa/selenium/By;)Lorg/openqa/selenium/WebElement;*&
 $
 %0org.openqa.selenium.WebElement*
@@ -30,90 +29,202 @@ $
 %1org.openqa.selenium.By2%findElement(Lorg/openqa/selenium/By;)ú
 ô
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaå å(.&
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaó ó(.&
 faceorg.openqa.selenium.WebElement"__id*&
 $
-%2org.openqa.selenium.WebElementàÖ
+%2org.openqa.selenium.WebElementd
+b
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaé é(*
-%3java.lang.String"Qorg.openqa.selenium.WebElement#getAttribute(Ljava/lang/String;)Ljava/lang/String;*(
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaò ò(
+valueSquare"__id*
+""*
+2
+12*‡
+2A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java§ §(âÜ
+A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java§ §(*
+%26java.lang.String"Qorg.openqa.selenium.WebElement#getAttribute(Ljava/lang/String;)Ljava/lang/String;*(
 &
 faceorg.openqa.selenium.WebElement*	
 class2 getAttribute(Ljava/lang/String;)*
 3
 4
 5
-1*€
+6*Ä
 3A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaó ó(t
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java≥  ≥($t
 r
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaô ô(
-%10java.util.logging.Logger"__id*
-""⁄◊
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java¥ ¥(
+%22java.util.logging.Logger"__id*
+""ˇ¸
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaô ô(/
-%11void"2java.util.logging.Logger#info(Ljava/lang/String;)V*!
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java¥ ¥(T
+%23void"2java.util.logging.Logger#info(Ljava/lang/String;)V*!
 
-%10java.util.logging.Logger*
-Lost the game...2info(Ljava/lang/String;)ç
+%22java.util.logging.Logger*97
+5Cannot determine state of the game... Ending the game2info(Ljava/lang/String;)ç
 ä
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaö ö($
-%12org.openqa.selenium.WebDriver"__id**
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaµ µ($
+%24org.openqa.selenium.WebDriver"__id**
 	GameState"
 driver™ß
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaö ö(
-%13void"%org.openqa.selenium.WebDriver#quit()V*&
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaµ µ(
+%25void"%org.openqa.selenium.WebDriver#quit()V*&
 $
-%12org.openqa.selenium.WebDriver2quit()*
-1*‰
+%24org.openqa.selenium.WebDriver2quit()*
+1*€
 4A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaí í(s
-q
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java≠ ≠(t
+r
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaî î(
-%6java.util.logging.Logger"__id*
-""Á‰
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaØ Ø(
+%18java.util.logging.Logger"__id*
+""⁄◊
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaî î(>
-
-%7void"2java.util.logging.Logger#info(Ljava/lang/String;)V* 
-
-%6java.util.logging.Logger*#!
-Finished the game successfully!2info(Ljava/lang/String;)å
-â
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaØ Ø(/
+%19void"2java.util.logging.Logger#info(Ljava/lang/String;)V*!
+
+%18java.util.logging.Logger*
+Lost the game...2info(Ljava/lang/String;)ç
+ä
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaï ï(#
-%8org.openqa.selenium.WebDriver"__id**
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java∞ ∞($
+%20org.openqa.selenium.WebDriver"__id**
 	GameState"
-driver®•
+driver™ß
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaï ï(
-
-%9void"%org.openqa.selenium.WebDriver#quit()V*%
-#
-%8org.openqa.selenium.WebDriver2quit()*
-1*ò
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java∞ ∞(
+%21void"%org.openqa.selenium.WebDriver#quit()V*&
+$
+%20org.openqa.selenium.WebDriver2quit()*
+1*Í
 5A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaè è(s
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java® ®(t
+r
+A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java™ ™(
+%14java.util.logging.Logger"__id*
+""ÈÊ
+A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java™ ™(>
+%15void"2java.util.logging.Logger#info(Ljava/lang/String;)V*!
+
+%14java.util.logging.Logger*#!
+Finished the game successfully!2info(Ljava/lang/String;)ç
+ä
+A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java´ ´($
+%16org.openqa.selenium.WebDriver"__id**
+	GameState"
+driver™ß
+A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java´ ´(
+%17void"%org.openqa.selenium.WebDriver#quit()V*&
+$
+%16org.openqa.selenium.WebDriver2quit()*
+1*õ
+6A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java• •(t
+r
+A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java¶ ¶(
+%12java.util.logging.Logger"__id*
+""◊‘
+A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.java¶ ¶(,
+%13void"2java.util.logging.Logger#info(Ljava/lang/String;)V*!
+
+%12java.util.logging.Logger*
+Still solving2info(Ljava/lang/String;)*
+1*¬
+8A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaõ õ(0q
+o
+A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaõ õ(0
+entryjava.util.Map$Entry"__id*
+""*
+2
+10*¿
+9A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaû û(¡æ
+A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaû û(%%
+%10org.openqa.selenium.WebElement"2Square#getWebEle()Lorg/openqa/selenium/WebElement;*
+
+valueSquare2getWebEle()Æ´
+A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaû û(-
+%11void"'org.openqa.selenium.WebElement#click()V*'
+%
+%10org.openqa.selenium.WebElement2click()*
+8*Î
+10A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaú ú(≤Ø
+A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaú ú((
+%7Square"0java.util.Map$Entry#getValue()Ljava/lang/Object;*
+
+entryjava.util.Map$Entry2
+getValue()l
+j
+A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaú ú((
+valueSquare"__id*
+
+%7Square®•
+A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaù ù('
+%8java.lang.String"&Square#getEleClass()Ljava/lang/String;*
+
+valueSquare2getEleClass()À»
+A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaù ù(>
+%9boolean",java.lang.String#equals(Ljava/lang/Object;)Z*
+
+%8java.lang.String*
+square blank2equals(Ljava/lang/Object;)*
+8
+9*˜
+11A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaõ3 õ(=
+}
+A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaõ3 õ(=
+%5java.util.Map"__id**
+	GameState"
+
+allSquaresß§
+A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaõ3 õ(H
+%6java.util.Set"'java.util.Map#entrySet()Ljava/util/Set;*
+
+%5java.util.Map2
+entrySet()*
+8*®
+12A
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaö ö(s
 q
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaê ê(
-%4java.util.logging.Logger"__id*
-""’“
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaö ö(
+%3java.util.logging.Logger"__id*
+""„‡
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaê ê(,
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaö ö(6
 
-%5void"2java.util.logging.Logger#info(Ljava/lang/String;)V* 
+%4void"2java.util.logging.Logger#info(Ljava/lang/String;)V* 
 
-%4java.util.logging.Logger*
-Still solving2info(Ljava/lang/String;)*
-1*ì
+%3java.util.logging.Logger*
+Game Finished, clearing up!2info(Ljava/lang/String;)*
+11*ì
 1A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaù ù("K
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaπ π("K
 A
-5C:/Users/cde/MineSweeper/src/main/java/GameState.javaù ù(
+5C:/Users/cde/MineSweeper/src/main/java/GameState.javaπ π(
+"":
 ""B
 	GameState
