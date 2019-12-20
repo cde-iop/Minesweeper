@@ -47,6 +47,12 @@ class Square {
 
     }
 
+    void iterateSurroundingSquares(GameState game){
+        for (Square item : getSurroundingSquares()) {
+            MinesweeperSolver.checkAndClearSquares(item, game);
+        }
+    }
+
     WebElement getWebEle() {
         return webEle;
     }

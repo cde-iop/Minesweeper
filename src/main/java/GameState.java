@@ -24,7 +24,9 @@ class GameState {
     GameState(int[] dimensions, WebDriver driver) {
         this.dimensions = dimensions;
         this.driver = driver;
-
+        //The game itself is nested within other elements, for some reason i couldn't fetch the webelement when i tried
+        //sto fetch it from the webpage, instead we get down to the webelement that contains the game and fetch each of the
+        //squares from there
         WebElement table = driver.findElement(new By.ByXPath("/html/body/table"));
         WebElement outerContainer = table.findElement(By.className("outer-container"));
         WebElement innerContainer = outerContainer.findElement(By.className("inner-container"));
@@ -47,6 +49,7 @@ class GameState {
         String id;
         List<Square> surroundingSquares = new ArrayList<>();
         Square value;
+        //iterate through the grid and create square objects to represent each webelement square
         for (int y = 1; y <= dimensions[0]; y++) {
             for (int x = 1; x <= dimensions[1]; x++) {
                 id = String.format(format, y, x);
@@ -58,48 +61,55 @@ class GameState {
             value = entry.getValue();
             int y = value.getCoordinates()[0];
             int x = value.getCoordinates()[1];
+            // if its the top left corner square
             if (x == 1 && y == 1) {
                 surroundingSquares.add(output.get((String.format(format, 1, 2))));
                 surroundingSquares.add(output.get((String.format(format, 2, 2))));
                 surroundingSquares.add(output.get((String.format(format, 2, 1))));
+                //if its the bottom left corner square
             } else if (x == 1 && y == dimensions[0]) {
                 surroundingSquares.add(output.get((String.format(format, y - 1, 1))));
                 surroundingSquares.add(output.get((String.format(format, y - 1, 2))));
                 surroundingSquares.add(output.get((String.format(format, y, 2))));
+                //if its the top right corner square
             } else if (y == 1 && x == dimensions[1]) {
                 surroundingSquares.add(output.get((String.format(format, 1, x - 1))));
                 surroundingSquares.add(output.get((String.format(format, 2, x - 1))));
                 surroundingSquares.add(output.get((String.format(format, 2, x))));
+                //if its the bottom right corner square
             } else if (x == dimensions[1] && y == dimensions[0]) {
                 surroundingSquares.add(output.get((String.format(format, y - 1, x))));
                 surroundingSquares.add(output.get((String.format(format, y - 1, x - 1))));
                 surroundingSquares.add(output.get((String.format(format, y, x - 1))));
+                //if its along the right edge
             } else if (x == dimensions[1]) {
                 surroundingSquares.add(output.get((String.format(format, y - 1, x))));
                 surroundingSquares.add(output.get((String.format(format, y + 1, x))));
                 surroundingSquares.add(output.get((String.format(format, y, x - 1))));
                 surroundingSquares.add(output.get((String.format(format, y - 1, x - 1))));
                 surroundingSquares.add(output.get((String.format(format, y + 1, x - 1))));
+                //if its along the bottom
             } else if (y == dimensions[0]) {
                 surroundingSquares.add(output.get(String.format(format, y, x - 1)));
                 surroundingSquares.add(output.get((String.format(format, y, x + 1))));
                 surroundingSquares.add(output.get((String.format(format, y - 1, x - 1))));
                 surroundingSquares.add(output.get((String.format(format, y - 1, x))));
                 surroundingSquares.add(output.get((String.format(format, y - 1, x + 1))));
+                //if its along the left edge
             } else if (x == 1) {
                 surroundingSquares.add(output.get((String.format(format, y - 1, x))));
                 surroundingSquares.add(output.get((String.format(format, y + 1, x))));
                 surroundingSquares.add(output.get((String.format(format, y + 1, x + 1))));
                 surroundingSquares.add(output.get((String.format(format, y, x + 1))));
                 surroundingSquares.add(output.get((String.format(format, y - 1, x + 1))));
-
+                //if its along the top
             } else if (y == 1) {
                 surroundingSquares.add(output.get((String.format(format, y, x - 1))));
                 surroundingSquares.add(output.get((String.format(format, y, x + 1))));
                 surroundingSquares.add(output.get((String.format(format, y + 1, x))));
                 surroundingSquares.add(output.get((String.format(format, y + 1, x - 1))));
                 surroundingSquares.add(output.get((String.format(format, y + 1, x + 1))));
-
+                //if its a middle square
             } else {
                 surroundingSquares.add(output.get((String.format(format, y - 1, x - 1))));
                 surroundingSquares.add(output.get((String.format(format, y - 1, x))));
@@ -121,6 +131,7 @@ class GameState {
     }
 
     List<Square> getBlankList(Square input) {
+        //Searches through the surrounding square and creates a list of any that are blank, i.e unknown
         List<Square> blankList = new ArrayList<>();
         for (Square element : input.getSurroundingSquares()) {
             element.updateWebEle(game);
@@ -134,10 +145,21 @@ class GameState {
         return blankList;
     }
 
-    boolean isGameFinished() {
+    boolean isGameFinished(int noOfBombs) {
         boolean gameFinished = false;
         WebElement face;
         face = game.findElement(By.id("face"));
+        Square value;
+        if (noOfBombs == 0) {
+            logger.info("Game Finished, clearing up!");
+            for (Map.Entry<String, Square> entry : allSquares.entrySet()) {
+                value = entry.getValue();
+                if (value.getEleClass().equals("square blank")) {
+                    value.getWebEle().click();
+                }
+            }
+            gameFinished = true;
+        }
 
         switch (face.getAttribute("class")) {
             case "facesmile":
@@ -153,11 +175,18 @@ class GameState {
                 logger.info("Lost the game...");
                 driver.quit();
                 break;
+            default:
+                gameFinished  = true;
+                logger.info("Cannot determine state of the game... Ending the game");
+                driver.quit();
+                break;
+
         }
         return gameFinished;
     }
 
     void contextClick(WebElement element) {
+        //Method to right click (in this case to mark bombs)
         try {
             Actions actions = new Actions(driver);
             actions.contextClick(element).perform();
@@ -173,16 +202,15 @@ class GameState {
         }
     }
     boolean checkForPattern(Square element) {
-        if (checkFor11(element)){
-            return false;
-        }else if(checkFor121(element) || checkFor1221(element)) {
+        if (checkFor121H(element) || checkFor121V(element) || checkFor1221H(element) || checkFor1221V(element)){
             return true;
         }else{
             return false;
         }
 
     }
-    private boolean checkFor11(Square currentSquare) {
+
+    boolean checkFor11(Square currentSquare) {
         int[] elementCoords = currentSquare.getCoordinates();
         int y = elementCoords[0];
         int x = elementCoords[1];
@@ -218,121 +246,41 @@ class GameState {
     }
 
 
-        private boolean checkFor121(Square currentSquare) {
+    private boolean checkFor121H(Square currentSquare) {
         int[] elementCoords = currentSquare.getCoordinates();
         int y = elementCoords[0];
         int x = elementCoords[1];
         try {
             Square squareToLeft = allSquares.get(String.format(format, y, x - 1));
             Square squareToRight = allSquares.get(String.format(format, y, x + 1));
-
-            if (squareToLeft.getNumber() - squareToLeft.getBombsFound() == 1
-                    && currentSquare.getNumber() - currentSquare.getBombsFound() == 2
-                    && squareToRight.getNumber() - squareToRight.getBombsFound() == 1) {
-                try {
-                    if (allSquares.get(String.format(format, y - 1, x - 1)).getEleClass().equals(blank)
-                            && allSquares.get(String.format(format, y - 1, x + 1)).getEleClass().equals(blank)) {
-                        contextClick(allSquares.get(String.format(format, y - 1, x - 1)).getWebEle());
-                        for (Square thing: allSquares.get(String.format(format, y - 1, x - 1)).getSurroundingSquares()) {
-                            thing.setBombsFound(thing.getBombsFound() + 1);
-                        }
-                        contextClick(allSquares.get(String.format(format, y - 1, x + 1)).getWebEle());
-                        for (Square thing: allSquares.get(String.format(format, y - 1, x + 1)).getSurroundingSquares()) {
-                            thing.setBombsFound(thing.getBombsFound() + 1);
-                        }
-                        allSquares.get(String.format(format, y - 1, x)).getWebEle().click();
-                        return true;
-
-                    } else if (allSquares.get(String.format(format, y + 1, x - 1)).getEleClass().equals(blank)
-                            && allSquares.get(String.format(format, y + 1, x + 1)).getEleClass().equals(blank)) {
-                        contextClick(allSquares.get(String.format(format, y + 1, x - 1)).getWebEle());
-                        for (Square thing: allSquares.get(String.format(format, y + 1, x - 1)).getSurroundingSquares()) {
-                            thing.setBombsFound(thing.getBombsFound() + 1);
-                        }
-                        contextClick(allSquares.get(String.format(format, y + 1, x + 1)).getWebEle());
-                        for (Square thing: allSquares.get(String.format(format, y + 1, x + 1)).getSurroundingSquares()) {
-                            thing.setBombsFound(thing.getBombsFound() + 1);
-                        }
-                        allSquares.get(String.format(format, y + 1, x)).getWebEle().click();
-                        return true;
-                    }
-                }catch(NullPointerException e){
-                    if (allSquares.get(String.format(format, y + 1, x - 1)).getEleClass().equals(blank)
-                            && allSquares.get(String.format(format, y + 1, x + 1)).getEleClass().equals(blank)) {
-                        contextClick(allSquares.get(String.format(format, y + 1, x - 1)).getWebEle());
-                        for (Square thing: allSquares.get(String.format(format, y + 1, x - 1)).getSurroundingSquares()) {
-                            thing.setBombsFound(thing.getBombsFound() + 1);
-                        }
-                        contextClick(allSquares.get(String.format(format, y + 1, x + 1)).getWebEle());
-                        for (Square thing: allSquares.get(String.format(format, y + 1, x + 1)).getSurroundingSquares()) {
-                            thing.setBombsFound(thing.getBombsFound() + 1);
-                        }
-                        allSquares.get(String.format(format, y + 1, x)).getWebEle().click();
-                        return true;
-                    }
-                }
+            if(checkForAndDealWith121IfBlanksBelow(squareToLeft, currentSquare, squareToRight)){
+                return true;
+            }else {
+                return checkForAndDealWith121IfBlanksToAbove(squareToLeft, currentSquare, squareToRight);
             }
         }catch(NullPointerException e){
-            return false;
+                return false;
         }
-        try{
+    }
+
+    private boolean checkFor121V(Square currentSquare) {
+        int[] elementCoords = currentSquare.getCoordinates();
+        int y = elementCoords[0];
+        int x = elementCoords[1];
+        try {
             Square squareAbove = allSquares.get(String.format(format, y - 1, x));
             Square squareBelow = allSquares.get(String.format(format, y + 1, x));
-            if (squareAbove.getNumber() - squareAbove.getBombsFound() == 1
-                    && currentSquare.getNumber() - currentSquare.getBombsFound() == 2
-                    && squareBelow.getNumber() - squareBelow.getBombsFound() == 1) {
-                    try {
-                        if (allSquares.get(String.format(format, y + 1, x - 1)).getEleClass().equals(blank)
-                                && allSquares.get(String.format(format, y - 1, x - 1)).getEleClass().equals(blank)) {
-                            contextClick(allSquares.get(String.format(format, y + 1, x - 1)).getWebEle());
-                            for (Square thing: allSquares.get(String.format(format, y + 1, x - 1)).getSurroundingSquares()) {
-                                thing.setBombsFound(thing.getBombsFound() + 1);
-                            }
-                            contextClick(allSquares.get(String.format(format, y - 1, x - 1)).getWebEle());
-                            for (Square thing: allSquares.get(String.format(format, y - 1, x - 1)).getSurroundingSquares()) {
-                                thing.setBombsFound(thing.getBombsFound() + 1);
-                            }
-                            allSquares.get(String.format(format, y, x - 1)).getWebEle().click();
-                            return true;
-
-                        } else if (allSquares.get(String.format(format, y + 1, x + 1)).getEleClass().equals(blank)
-                                && allSquares.get(String.format(format, y - 1, x + 1)).getEleClass().equals(blank)) {
-                            contextClick(allSquares.get(String.format(format, y + 1, x + 1)).getWebEle());
-                            for (Square thing: allSquares.get(String.format(format, y + 1, x + 1)).getSurroundingSquares()) {
-                                thing.setBombsFound(thing.getBombsFound() + 1);
-                            }
-                            contextClick(allSquares.get(String.format(format, y - 1, x + 1)).getWebEle());
-                            for (Square thing: allSquares.get(String.format(format, y - 1, x + 1)).getSurroundingSquares()) {
-                                thing.setBombsFound(thing.getBombsFound() + 1);
-                            }
-                            allSquares.get(String.format(format, y, x + 1)).getWebEle().click();
-                            return true;
-                        }
-                    } catch (NullPointerException e) {
-                        if (allSquares.get(String.format(format, y + 1, x + 1)).getEleClass().equals(blank)
-                                && allSquares.get(String.format(format, y - 1, x + 1)).getEleClass().equals(blank)) {
-                            contextClick(allSquares.get(String.format(format, y + 1, x + 1)).getWebEle());
-                            for (Square thing: allSquares.get(String.format(format, y + 1, x + 1)).getSurroundingSquares()) {
-                                thing.setBombsFound(thing.getBombsFound() + 1);
-                            }
-                            contextClick(allSquares.get(String.format(format, y - 1, x + 1)).getWebEle());
-                            for (Square thing: allSquares.get(String.format(format, y - 1, x + 1)).getSurroundingSquares()) {
-                                thing.setBombsFound(thing.getBombsFound() + 1);
-                            }
-                            allSquares.get(String.format(format, y, x + 1)).getWebEle().click();
-
-                            return true;
-                        }
-
-                    }
+            if(checkForAndDealWith121IfBlanksLeft(squareAbove, currentSquare, squareBelow)){
+                return true;
+            }else {
+                return checkForAndDealWith121IfBlanksRight(squareAbove,currentSquare,squareBelow);
             }
-                return false;
         }catch(NullPointerException e){
             return false;
         }
     }
 
-    private boolean checkFor1221(Square currentSquare) {
+    private boolean checkFor1221H(Square currentSquare) {
         int[] elementCoords = currentSquare.getCoordinates();
         int y = elementCoords[0];
         int x = elementCoords[1];
@@ -340,118 +288,32 @@ class GameState {
             Square squareToLeft = allSquares.get(String.format(format, y, x - 1));
             Square squareToRight = allSquares.get(String.format(format, y, x + 1));
             Square squareToRight2 = allSquares.get(String.format(format, y, x + 2));
+            if(checkForAndDealWith1221IfBlanksAbove(squareToLeft, currentSquare, squareToRight, squareToRight2)){
+                return true;
+            }else {
+                return checkForAndDealWith1221IfBlanksBelow(squareToLeft, currentSquare, squareToRight, squareToRight2);
+            }
+        } catch (NullPointerException e) {
+            return false;
+        }
+    }
 
-            if (squareToLeft.getNumber() - squareToLeft.getBombsFound() == 1
-                    && currentSquare.getNumber() - currentSquare.getBombsFound() == 2
-                    && squareToRight.getNumber() - squareToRight.getBombsFound() == 2
-                    && squareToRight2.getNumber() - squareToRight2.getBombsFound() == 1) {
-                try {
-                    if (allSquares.get(String.format(format, y + 1, x)).getEleClass().equals(blank)
-                            && allSquares.get(String.format(format, y + 1, x + 1)).getEleClass().equals(blank)) {
-                        contextClick(allSquares.get(String.format(format, y + 1, x)).getWebEle());
-                        for (Square thing : allSquares.get(String.format(format, y + 1, x)).getSurroundingSquares()) {
-                            thing.setBombsFound(thing.getBombsFound() + 1);
-                        }
-                        contextClick(allSquares.get(String.format(format, y + 1, x + 1)).getWebEle());
-                        for (Square thing : allSquares.get(String.format(format, y + 1, x + 1)).getSurroundingSquares()) {
-                            thing.setBombsFound(thing.getBombsFound() + 1);
-                        }
-                        allSquares.get(String.format(format, y + 1, x - 1)).getWebEle().click();
-                        allSquares.get(String.format(format, y + 1, x + 2)).getWebEle().click();
-                        return true;
-                    } else if (allSquares.get(String.format(format, y - 1, x)).getEleClass().equals(blank)
-                            && allSquares.get(String.format(format, y - 1, x + 1)).getEleClass().equals(blank)) {
-                        contextClick(allSquares.get(String.format(format, y - 1, x)).getWebEle());
-                        for (Square thing : allSquares.get(String.format(format, y - 1, x)).getSurroundingSquares()) {
-                            thing.setBombsFound(thing.getBombsFound() + 1);
-                        }
-                        contextClick(allSquares.get(String.format(format, y - 1, x + 1)).getWebEle());
-                        for (Square thing : allSquares.get(String.format(format, y - 1, x + 1)).getSurroundingSquares()) {
-                            thing.setBombsFound(thing.getBombsFound() + 1);
-                        }
-                        allSquares.get(String.format(format, y - 1, x - 1)).getWebEle().click();
-                        allSquares.get(String.format(format, y - 1, x + 2)).getWebEle().click();
-                        return true;
-                    }
-                } catch (NullPointerException e) {
-                    if (allSquares.get(String.format(format, y - 1, x)).getEleClass().equals(blank)
-                            && allSquares.get(String.format(format, y - 1, x + 1)).getEleClass().equals(blank)) {
-                        contextClick(allSquares.get(String.format(format, y - 1, x)).getWebEle());
-                        for (Square thing : allSquares.get(String.format(format, y - 1, x)).getSurroundingSquares()) {
-                            thing.setBombsFound(thing.getBombsFound() + 1);
-                        }
-                        contextClick(allSquares.get(String.format(format, y - 1, x + 1)).getWebEle());
-                        for (Square thing : allSquares.get(String.format(format, y - 1, x + 1)).getSurroundingSquares()) {
-                            thing.setBombsFound(thing.getBombsFound() + 1);
-                        }
-                        allSquares.get(String.format(format, y - 1, x - 1)).getWebEle().click();
-                        allSquares.get(String.format(format, y - 1, x + 2)).getWebEle().click();
-                        return true;
-                    }
-                }
-            }
-        }catch(NullPointerException e){
-                return false;
-            }
-        try{
+    private boolean checkFor1221V(Square currentSquare) {
+        int[] elementCoords = currentSquare.getCoordinates();
+        int y = elementCoords[0];
+        int x = elementCoords[1];
+        try {
             Square squareAbove = allSquares.get(String.format(format, y - 1, x));
             Square squareBelow = allSquares.get(String.format(format, y + 1, x));
             Square squareBelow2 = allSquares.get(String.format(format, y + 2, x));
-            if(squareAbove.getNumber() - squareAbove.getBombsFound() == 1
-                    && currentSquare.getNumber() - squareAbove.getBombsFound() == 2
-                    && squareBelow.getNumber() - squareBelow.getBombsFound() == 2
-                    && squareBelow2.getNumber() - squareBelow2.getBombsFound() == 1){
-                try{
-                    if(allSquares.get(String.format(format, y, x + 1)).getEleClass().equals(blank)
-                            && allSquares.get(String.format(format, y + 1, x + 1)).getEleClass().equals(blank)) {
-                        contextClick(allSquares.get(String.format(format, y + 1, x + 1)).getWebEle());
-                        for (Square thing: allSquares.get(String.format(format, y + 1, x + 1)).getSurroundingSquares()) {
-                            thing.setBombsFound(thing.getBombsFound() + 1);
-                        }
-                        contextClick(allSquares.get(String.format(format, y, x + 1)).getWebEle());
-                        for (Square thing: allSquares.get(String.format(format, y, x + 1)).getSurroundingSquares()) {
-                            thing.setBombsFound(thing.getBombsFound() + 1);
-                        }
-                        allSquares.get(String.format(format, y - 1, x + 1)).getWebEle().click();
-                        allSquares.get(String.format(format, y + 2, x + 1)).getWebEle().click();
-                        return true;
-                    }else if(allSquares.get(String.format(format, y, x - 1)).getEleClass().equals(blank)
-                            && allSquares.get(String.format(format, y + 1, x - 1)).getEleClass().equals(blank)) {
-                        contextClick(allSquares.get(String.format(format, y, x - 1)).getWebEle());
-                        for (Square thing : allSquares.get(String.format(format, y, x - 1)).getSurroundingSquares()) {
-                            thing.setBombsFound(thing.getBombsFound() + 1);
-                        }
-                        contextClick(allSquares.get(String.format(format, y + 1, x - 1)).getWebEle());
-                        for (Square thing : allSquares.get(String.format(format, y + 1, x - 1)).getSurroundingSquares()) {
-                            thing.setBombsFound(thing.getBombsFound() + 1);
-                        }
-                        allSquares.get(String.format(format, y - 1, x - 1)).getWebEle().click();
-                        allSquares.get(String.format(format, y + 2, x - 1)).getWebEle().click();
-                        return true;
-                    }
-                }catch(NullPointerException e){
-                    if(allSquares.get(String.format(format, y, x - 1)).getEleClass().equals(blank)
-                            && allSquares.get(String.format(format, y + 1, x - 1)).getEleClass().equals(blank)) {
-                        contextClick(allSquares.get(String.format(format, y, x - 1)).getWebEle());
-                        for (Square thing : allSquares.get(String.format(format, y, x - 1)).getSurroundingSquares()) {
-                            thing.setBombsFound(thing.getBombsFound() + 1);
-                        }
-                        contextClick(allSquares.get(String.format(format, y + 1, x - 1)).getWebEle());
-                        for (Square thing : allSquares.get(String.format(format, y + 1, x - 1)).getSurroundingSquares()) {
-                            thing.setBombsFound(thing.getBombsFound() + 1);
-                        }
-                        allSquares.get(String.format(format, y - 1, x - 1)).getWebEle().click();
-                        allSquares.get(String.format(format, y + 2, x - 1)).getWebEle().click();
-                        return true;
-                    }
-
-                }
-
+            if (checkForAndDealWith1221IfBlanksRight(squareAbove, currentSquare, squareBelow, squareBelow2)) {
+                return true;
+            } else {
+                return checkForAndDealWith1221IfBlanksLeft(squareAbove, currentSquare, squareBelow, squareBelow2);
             }
         }catch(NullPointerException e){
             return false;
         }
-        return false;
     }
     private boolean checkFor11AndClear(Square currentSquare, Square adjacentSquare) {
         List<Square> currentSquareBlanks = getBlankList(currentSquare);
@@ -491,7 +353,8 @@ class GameState {
             if(markIf21(currentSquare, squareToLeft)){
                 return true;
             }
-        }catch(NullPointerException e){ }
+        }catch(NullPointerException e){
+        }
         try{
             Square squareToRight = allSquares.get(String.format(format, y, x + 1));
             if(markIf21(currentSquare, squareToRight)){
@@ -535,5 +398,224 @@ class GameState {
             return false;
         }
     }
+
+    private boolean checkForAndDealWith121IfBlanksToAbove(Square adjacentSquare1, Square currentSquare, Square adjacentSquare2) {
+        int y = currentSquare.getCoordinates()[0];
+        int x = currentSquare.getCoordinates()[1];
+        try {
+            if (adjacentSquare1.getNumber() - adjacentSquare1.getBombsFound() == 1
+                    && currentSquare.getNumber() - currentSquare.getBombsFound() == 2
+                    && adjacentSquare2.getNumber() - adjacentSquare2.getBombsFound() == 1
+                    && allSquares.get(String.format(format, y - 1, x - 1)).getEleClass().equals(blank)
+                    && allSquares.get(String.format(format, y - 1, x + 1)).getEleClass().equals(blank)) {
+                contextClick(allSquares.get(String.format(format, y - 1, x - 1)).getWebEle());
+                for (Square thing : allSquares.get(String.format(format, y - 1, x - 1)).getSurroundingSquares()) {
+                    thing.setBombsFound(thing.getBombsFound() + 1);
+                }
+                contextClick(allSquares.get(String.format(format, y - 1, x + 1)).getWebEle());
+                for (Square thing : allSquares.get(String.format(format, y - 1, x + 1)).getSurroundingSquares()) {
+                    thing.setBombsFound(thing.getBombsFound() + 1);
+                }
+                allSquares.get(String.format(format, y - 1, x)).getWebEle().click();
+                return true;
+
+            }
+        } catch (NullPointerException e) {
+            return false;
+        }
+        return false;
+    }
+
+    private boolean checkForAndDealWith121IfBlanksBelow(Square adjacentSquare1, Square currentSquare, Square adjacentSquare2){
+        int y = currentSquare.getCoordinates()[0];
+        int x = currentSquare.getCoordinates()[1];
+        try {
+            if (adjacentSquare1.getNumber() - adjacentSquare1.getBombsFound() == 1
+                    && currentSquare.getNumber() - currentSquare.getBombsFound() == 2
+                    && adjacentSquare2.getNumber() - adjacentSquare2.getBombsFound() == 1
+                    && allSquares.get(String.format(format, y + 1, x - 1)).getEleClass().equals(blank)
+                    && allSquares.get(String.format(format, y + 1, x + 1)).getEleClass().equals(blank)) {
+                contextClick(allSquares.get(String.format(format, y + 1, x - 1)).getWebEle());
+                for (Square thing : allSquares.get(String.format(format, y + 1, x - 1)).getSurroundingSquares()) {
+                    thing.setBombsFound(thing.getBombsFound() + 1);
+                }
+                contextClick(allSquares.get(String.format(format, y + 1, x + 1)).getWebEle());
+                for (Square thing : allSquares.get(String.format(format, y + 1, x + 1)).getSurroundingSquares()) {
+                    thing.setBombsFound(thing.getBombsFound() + 1);
+                }
+                allSquares.get(String.format(format, y + 1, x)).getWebEle().click();
+                return true;
+            }
+
+        } catch (NullPointerException e) {
+            return false;
+        }
+        return false;
+    }
+
+    private boolean checkForAndDealWith121IfBlanksLeft(Square adjacentSquare1, Square currentSquare, Square adjacentSquare2) {
+        int y = currentSquare.getCoordinates()[0];
+        int x = currentSquare.getCoordinates()[1];
+        try {
+            if (adjacentSquare1.getNumber() - adjacentSquare1.getBombsFound() == 1
+                    && currentSquare.getNumber() - currentSquare.getBombsFound() == 2
+                    && adjacentSquare2.getNumber() - adjacentSquare2.getBombsFound() == 1
+                    && allSquares.get(String.format(format, y + 1, x - 1)).getEleClass().equals(blank)
+                    && allSquares.get(String.format(format, y - 1, x - 1)).getEleClass().equals(blank)) {
+                contextClick(allSquares.get(String.format(format, y + 1, x - 1)).getWebEle());
+                for (Square thing : allSquares.get(String.format(format, y + 1, x - 1)).getSurroundingSquares()) {
+                    thing.setBombsFound(thing.getBombsFound() + 1);
+                }
+                contextClick(allSquares.get(String.format(format, y - 1, x - 1)).getWebEle());
+                for (Square thing : allSquares.get(String.format(format, y - 1, x - 1)).getSurroundingSquares()) {
+                    thing.setBombsFound(thing.getBombsFound() + 1);
+                }
+                allSquares.get(String.format(format, y, x - 1)).getWebEle().click();
+                return true;
+
+            }
+        } catch (NullPointerException e) {
+            return false;
+        }
+        return false;
+    }
+
+    private boolean checkForAndDealWith121IfBlanksRight(Square adjacentSquare1, Square currentSquare, Square adjacentSquare2){
+        int y = currentSquare.getCoordinates()[0];
+        int x = currentSquare.getCoordinates()[1];
+        try {
+            if (adjacentSquare1.getNumber() - adjacentSquare1.getBombsFound() == 1
+                    && currentSquare.getNumber() - currentSquare.getBombsFound() == 2
+                    && adjacentSquare2.getNumber() - adjacentSquare2.getBombsFound() == 1
+                    && allSquares.get(String.format(format, y + 1, x + 1)).getEleClass().equals(blank)
+                    && allSquares.get(String.format(format, y - 1, x + 1)).getEleClass().equals(blank)) {
+                contextClick(allSquares.get(String.format(format, y + 1, x + 1)).getWebEle());
+                for (Square thing : allSquares.get(String.format(format, y + 1, x + 1)).getSurroundingSquares()) {
+                    thing.setBombsFound(thing.getBombsFound() + 1);
+                }
+                contextClick(allSquares.get(String.format(format, y - 1, x + 1)).getWebEle());
+                for (Square thing : allSquares.get(String.format(format, y - 1, x + 1)).getSurroundingSquares()) {
+                    thing.setBombsFound(thing.getBombsFound() + 1);
+                }
+                allSquares.get(String.format(format, y, x + 1)).getWebEle().click();
+                return true;
+            }
+        } catch (NullPointerException e) {
+            return false;
+        }
+        return false;
+    }
+
+    private boolean checkForAndDealWith1221IfBlanksBelow(Square adjacentSquare1, Square currentSquare, Square adjacentSquare2, Square adjacentSquare3){
+        int y = currentSquare.getCoordinates()[0];
+        int x = currentSquare.getCoordinates()[1];
+        try {
+            if (adjacentSquare1.getNumber() - adjacentSquare1.getBombsFound() == 1
+                    && currentSquare.getNumber() - currentSquare.getBombsFound() == 2
+                    && adjacentSquare2.getNumber() - adjacentSquare2.getBombsFound() == 2
+                    && adjacentSquare3.getNumber() - adjacentSquare3.getBombsFound() == 1
+                    && allSquares.get(String.format(format, y + 1, x)).getEleClass().equals(blank)
+                    && allSquares.get(String.format(format, y + 1, x + 1)).getEleClass().equals(blank)) {
+                contextClick(allSquares.get(String.format(format, y + 1, x)).getWebEle());
+                for (Square thing : allSquares.get(String.format(format, y + 1, x)).getSurroundingSquares()) {
+                    thing.setBombsFound(thing.getBombsFound() + 1);
+                }
+                contextClick(allSquares.get(String.format(format, y + 1, x + 1)).getWebEle());
+                for (Square thing : allSquares.get(String.format(format, y + 1, x + 1)).getSurroundingSquares()) {
+                    thing.setBombsFound(thing.getBombsFound() + 1);
+                }
+                allSquares.get(String.format(format, y + 1, x - 1)).getWebEle().click();
+                allSquares.get(String.format(format, y + 1, x + 2)).getWebEle().click();
+                return true;
+            }
+        } catch (NullPointerException e) {
+            return false;
+        }
+        return false;
+    }
+
+    private boolean checkForAndDealWith1221IfBlanksAbove(Square adjacentSquare1, Square currentSquare, Square adjacentSquare2, Square adjacentSquare3){
+        int y = currentSquare.getCoordinates()[0];
+        int x = currentSquare.getCoordinates()[1];
+        try {
+            if (adjacentSquare1.getNumber() - adjacentSquare1.getBombsFound() == 1
+                    && currentSquare.getNumber() - currentSquare.getBombsFound() == 2
+                    && adjacentSquare2.getNumber() - adjacentSquare2.getBombsFound() == 2
+                    && adjacentSquare3.getNumber() - adjacentSquare3.getBombsFound() == 1
+                    && allSquares.get(String.format(format, y - 1, x)).getEleClass().equals(blank)
+                    && allSquares.get(String.format(format, y - 1, x + 1)).getEleClass().equals(blank)) {
+                contextClick(allSquares.get(String.format(format, y - 1, x)).getWebEle());
+                for (Square thing : allSquares.get(String.format(format, y - 1, x)).getSurroundingSquares()) {
+                    thing.setBombsFound(thing.getBombsFound() + 1);
+                }
+                contextClick(allSquares.get(String.format(format, y - 1, x + 1)).getWebEle());
+                for (Square thing : allSquares.get(String.format(format, y - 1, x + 1)).getSurroundingSquares()) {
+                    thing.setBombsFound(thing.getBombsFound() + 1);
+                }
+                allSquares.get(String.format(format, y - 1, x - 1)).getWebEle().click();
+                allSquares.get(String.format(format, y - 1, x + 2)).getWebEle().click();
+                return true;
+            }
+        } catch (NullPointerException e) {
+            return false;
+        }
+        return false;
+    }
+
+    private boolean checkForAndDealWith1221IfBlanksRight(Square adjacentSquare1, Square currentSquare, Square adjacentSquare2, Square adjacentSquare3){
+        int y = currentSquare.getCoordinates()[0];
+        int x = currentSquare.getCoordinates()[1];
+        try {
+            if(adjacentSquare1.getNumber() - adjacentSquare1.getBombsFound() == 1
+                    && currentSquare.getNumber() - currentSquare.getBombsFound() == 2
+                    && adjacentSquare2.getNumber() - adjacentSquare2.getBombsFound() == 2
+                    && adjacentSquare3.getNumber() - adjacentSquare3.getBombsFound() == 1
+                    && allSquares.get(String.format(format, y, x + 1)).getEleClass().equals(blank)
+                    && allSquares.get(String.format(format, y + 1, x + 1)).getEleClass().equals(blank)) {
+                contextClick(allSquares.get(String.format(format, y + 1, x + 1)).getWebEle());
+                for (Square thing : allSquares.get(String.format(format, y + 1, x + 1)).getSurroundingSquares()) {
+                    thing.setBombsFound(thing.getBombsFound() + 1);
+                }
+                contextClick(allSquares.get(String.format(format, y, x + 1)).getWebEle());
+                for (Square thing : allSquares.get(String.format(format, y, x + 1)).getSurroundingSquares()) {
+                    thing.setBombsFound(thing.getBombsFound() + 1);
+                }
+                allSquares.get(String.format(format, y - 1, x + 1)).getWebEle().click();
+                allSquares.get(String.format(format, y + 2, x + 1)).getWebEle().click();
+                return true;
+            }
+        } catch (NullPointerException e) {
+            return false;
+        }
+        return false;
+    }
+    private boolean checkForAndDealWith1221IfBlanksLeft(Square adjacentSquare1, Square currentSquare, Square adjacentSquare2, Square adjacentSquare3){
+        int y = currentSquare.getCoordinates()[0];
+        int x = currentSquare.getCoordinates()[1];
+        try {
+            if(adjacentSquare1.getNumber() - adjacentSquare1.getBombsFound() == 1
+                    && currentSquare.getNumber() - currentSquare.getBombsFound() == 2
+                    && adjacentSquare2.getNumber() - adjacentSquare2.getBombsFound() == 2
+                    && adjacentSquare3.getNumber() - adjacentSquare3.getBombsFound() == 1
+                    && allSquares.get(String.format(format, y, x - 1)).getEleClass().equals(blank)
+                    && allSquares.get(String.format(format, y + 1, x - 1)).getEleClass().equals(blank)) {
+                contextClick(allSquares.get(String.format(format, y + 1, x - 1)).getWebEle());
+                for (Square thing : allSquares.get(String.format(format, y + 1, x - 1)).getSurroundingSquares()) {
+                    thing.setBombsFound(thing.getBombsFound() + 1);
+                }
+                contextClick(allSquares.get(String.format(format, y, x - 1)).getWebEle());
+                for (Square thing : allSquares.get(String.format(format, y, x - 1)).getSurroundingSquares()) {
+                    thing.setBombsFound(thing.getBombsFound() + 1);
+                }
+                allSquares.get(String.format(format, y - 1, x - 1)).getWebEle().click();
+                allSquares.get(String.format(format, y + 2, x - 1)).getWebEle().click();
+                return true;
+            }
+            return false;
+        } catch (NullPointerException e) {
+            return false;
+        }
+    }
+
 }
 

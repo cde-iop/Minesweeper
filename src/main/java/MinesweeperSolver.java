@@ -37,7 +37,7 @@ class MinesweeperSolver {
                 gameState = new GameState(dimensions, driver);
                 gameState.constructSquareList();
                 noOfBombs = 40;
-                iterationCount = 3;
+                iterationCount = 2;
 
                 break;
             case "h":
@@ -47,7 +47,7 @@ class MinesweeperSolver {
                 gameState = new GameState(dimensions, driver);
                 gameState.constructSquareList();
                 noOfBombs = 99;
-                iterationCount = 4;
+                iterationCount = 3;
                 break;
 
 
@@ -79,31 +79,19 @@ class MinesweeperSolver {
         while (!gameFinished) {
             for (Map.Entry<String, Square> entry : squares.entrySet()) {
                 Square element = entry.getValue();
-                element.updateWebEle(game.getGame());
                 game.resetChecked();
                 checkAndClearSquares(element, game);
             }
             iterationCount -= 1;
-            gameFinished = game.isGameFinished();
+            gameFinished = game.isGameFinished(noOfBombs);
         }
     }
 
-    private static void checkAndClearSquares(Square element, GameState game) {
+    static void checkAndClearSquares(Square element, GameState game) {
         int number;
         List<Square> blankList;
         element.updateWebEle(game.getGame());
-        Square value;
         int bombsFound;
-        if (noOfBombs == 0) {
-            logger.info("Game Finished, clearing up!");
-            for (Map.Entry<String, Square> entry : game.getAllSquares().entrySet()) {
-                value = entry.getValue();
-                if (value.getEleClass().equals("square blank")) {
-                    value.getWebEle().click();
-                }
-            }
-            gameFinished = true;
-        }
         if (!element.isCleared() && !element.isChecked()) {
             number = element.getNumber();
             if (number != 0) {
@@ -120,10 +108,12 @@ class MinesweeperSolver {
                         item.updateWebEle(game.getGame());
                         item.setChecked(false);
                     }
-                    element.setCleared(true);
-                    for (Square item : element.getSurroundingSquares()) {
-                        checkAndClearSquares(item, game);
+                    for(Square item : blankList){
+                        for(Square thing : item.getSurroundingSquares()){
+                            checkAndClearSquares(thing, game);
+                        }
                     }
+                    element.setCleared(true);
                 } else if (bombsFound == number) {
                     element.setChecked(true);
                     for (Square item : blankList) {
@@ -132,27 +122,32 @@ class MinesweeperSolver {
                         item.setChecked(false);
                     }
                     element.setCleared(true);
-                    for (Square item : element.getSurroundingSquares()) {
-                        checkAndClearSquares(item, game);
+                    for(Square item : blankList){
+                        for(Square thing : item.getSurroundingSquares()){
+                            checkAndClearSquares(thing, game);
+                        }
                     }
 
-                } else if (iterationCount <= 0) {
+                }
+                else if (iterationCount <= 0) {
                     logger.info("Guessing random square");
                     blankList.get(rand.nextInt(blankList.size())).getWebEle().click();
                     iterationCount = 2;
                 } else {
                     element.setChecked(true);
-                    if (game.checkForPattern(element)) {
+                    if(game.checkFor11(element)){
+                        element.iterateSurroundingSquares(game);
+                    }else if (game.checkForPattern(element)) {
                         noOfBombs -= 2;
                         element.setCleared(true);
-                        for (Square item : element.getSurroundingSquares()) {
-                            checkAndClearSquares(item, game);
-                        }
-                    } else if (iterationCount <= 2 && game.checkFor21(element)) {
+                        element.iterateSurroundingSquares(game);
+                    }else if (iterationCount <= 1 && game.checkFor21(element)) {
                         noOfBombs -= 1;
+                        element.iterateSurroundingSquares(game);
                     }
                 }
             }
         }
     }
 }
+
